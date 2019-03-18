@@ -118,9 +118,11 @@ body {
      display: flex;
      display: -webkit-flex;
      margin-top: 0.5rem;
-     height: 5.65rem;
+     height: 560px;
      width: 100%;
-     
+}
+.mui-content{
+    height: calc(87vh)
 }
  .right{
      flex: 1;
