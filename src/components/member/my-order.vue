@@ -1,0 +1,89 @@
+<template>
+    <div class="margin-t">
+        <div class="nav-title">
+            <a href="#" class="my-order">我的订单</a>
+            <a href="#" class="see-all">查看全部</a>
+        </div>
+        <div class="order-nav">
+            <div class="item">
+                <a href="#">
+                    <img src="../../assets/img/order-state-pay.png" alt="待付款">
+                    <p>待付款</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="../../assets/img/order-state-send.png" alt="待发货">
+                    <p>待发货</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="../../assets/img/order-state-recive.png" alt="待收货">
+                    <p>待收货</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="../../assets/img/order-state-eval.png" alt="待评价">
+                    <p>待评价</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
+                    <p>退款/售后</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style lang="stylus" scoped>
+    .margin-t{
+        height: 130px;
+        margin-top: 15px;
+        background-color #fff
+        border-radius 13px;
+        .nav-title{
+            height 46px;
+            border-bottom 1px solid #ccc
+            .my-order,.see-all{
+                width :68px;
+                height 100%;
+                float left
+                text-align center;
+                line-height 46px;
+            }
+             .see-all{
+                float right 
+             }
+        }
+        .order-nav{
+            display flex;
+            height 83px;
+            .item{
+                flex 1;
+                height 100%
+                a{
+                    width 100%
+                    height 100%
+                    text-align center;
+                    display inline-block;
+                    width 100%;
+                    height 100%
+                    img {
+                        width 30px
+                        height 23px
+                        margin 20px;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
