@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" v-if="$route.meta.navShow">
       <mt-tab-item id="index" >
         <i class="fa fa-home" aria-hidden="true"></i>
         <p>首页</p>

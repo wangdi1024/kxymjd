@@ -122,7 +122,7 @@ body {
      width: 100%;
 }
 .mui-content{
-    height: calc(87vh)
+    height: calc(85vh)
 }
  .right{
      flex: 1;

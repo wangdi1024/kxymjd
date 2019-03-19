@@ -8,17 +8,17 @@
             <div class="line"></div>
         </div>
         <div class="item">
-            <a href="#">
+            <router-link to="/myPurse" href="#">
                 <p>余额</p>
                 <p>￥0.00</p>
-            </a>
+            </router-link>
             <div class="line"></div>
         </div>
         <div  class="item">
-            <a href="#">
+            <router-link to="/redPacket" href="#">
                 <p>红包</p>
                 <p>2</p>
-            </a>
+            </router-link>
             <div class="line"></div>
         </div>
         <div class="item">
