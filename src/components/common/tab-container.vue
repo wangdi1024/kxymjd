@@ -11,17 +11,18 @@
         <div class="seleted">
             <mt-tab-container v-model="selected">
                 <mt-tab-container-item id="1">
-                    <red-list Use='false'></red-list>
-                    <red-list Use='false'></red-list>
-                    <red-list></red-list>
-                    <red-list></red-list>
-                    <red-list></red-list>
+                    <red-list Use='false' text='未使用'></red-list>
+                    <red-list Use='false' text='未使用'></red-list>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="2">
-                    <mt-cell v-for="n in 4" :key='n' :title="'测试 ' + n"></mt-cell>
+                   <red-list Use='true' text='已使用'></red-list>
+                    <red-list Use='true'  text='已使用'></red-list>
+                    <red-list Use='true'  text='已使用'></red-list>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="3">
-                    <mt-cell v-for="n in 6" :key='n' :title="'选项 ' + n"></mt-cell>
+                   <red-list  text='已过期'></red-list>
+                    <red-list text='已过期'></red-list>
+                    <red-list text='已过期'></red-list>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>

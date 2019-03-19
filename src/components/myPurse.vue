@@ -57,7 +57,7 @@ html,body{
             padding-top 25px;
             margin-bottom 10px;
             .text{
-                width 130px;
+                width 150px;
                 // height 130px;
                 p:nth-child(2){
                     font-size 60px
