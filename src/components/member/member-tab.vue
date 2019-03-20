@@ -1,10 +1,10 @@
 <template>
     <div class="member-tab">
         <div class="item">
-            <a href="#">
+            <router-link to="/IntegralMall" href="#">
                 <p>积分</p>
                 <p>2</p>
-            </a>
+            </router-link>
             <div class="line"></div>
         </div>
         <div class="item">
@@ -22,10 +22,10 @@
             <div class="line"></div>
         </div>
         <div class="item">
-            <a href="#">
+            <router-link to="/coupons" href="#">
                 <p>优惠券</p>
                 <p>2</p>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>

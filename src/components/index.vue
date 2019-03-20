@@ -379,7 +379,7 @@ export default {
         }
     },
     created () {
-
+        console.log('object');
     },
     mounted() {
         document.querySelector('body').setAttribute('style', 'background-color:#f8f8f8')

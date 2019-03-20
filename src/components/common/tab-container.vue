@@ -2,27 +2,22 @@
     <div>
         <div class="nav">
             <mt-navbar class="page-part" v-model="selected">
-                <mt-tab-item id="1" @click.native.prevent="isShow('1')" :class="selected=='1'?'is-selected':' '">未使用</mt-tab-item>
-                <mt-tab-item id="2" @click.native.prevent="isShow('2')" :class="selected=='2'?'is-selected':' '">已使用</mt-tab-item>
-                <mt-tab-item id="3" @click.native.prevent="isShow('3')" :class="selected=='3'?'is-selected':' '">已过期</mt-tab-item>
+                <mt-tab-item :id='index' @click.native.prevent="isShow(index)" :class="selected==index?'is-selected':' '" v-for="(item, index) in list" :key="item.id">{{item.text}}</mt-tab-item>
+                <!-- <mt-tab-item id="2" @click.native.prevent="isShow('2')" :class="selected=='2'?'is-selected':' '">已使用</mt-tab-item>
+                <mt-tab-item id="3" @click.native.prevent="isShow('3')" :class="selected=='3'?'is-selected':' '">已过期</mt-tab-item> -->
             </mt-navbar>
             <!-- {{selected}} -->
         </div>
         <div class="seleted">
             <mt-tab-container v-model="selected">
+                <mt-tab-container-item id='0' >
+                    <slot name="iSUse"></slot>
+                </mt-tab-container-item>
                 <mt-tab-container-item id="1">
-                    <red-list Use='false' text='未使用'></red-list>
-                    <red-list Use='false' text='未使用'></red-list>
+                   <slot name="notUse"></slot>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="2">
-                   <red-list Use='true' text='已使用'></red-list>
-                    <red-list Use='true'  text='已使用'></red-list>
-                    <red-list Use='true'  text='已使用'></red-list>
-                </mt-tab-container-item>
-                <mt-tab-container-item id="3">
-                   <red-list  text='已过期'></red-list>
-                    <red-list text='已过期'></red-list>
-                    <red-list text='已过期'></red-list>
+                   <slot name="overdue"></slot>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>
@@ -31,22 +26,28 @@
 <script>
 import { TabContainer, TabContainerItem } from 'mint-ui';
 import { Navbar, TabItem } from 'mint-ui';
-import redList from './red-list'
 import { throws } from 'assert';
 export default {
     name:'tabContainer',
     components:{
-        redList
+    },
+    props:{
+        list:{
+           required: true,
+            type: Array,
+            default: () => [] 
+        },
+        
     },
     data() {
         return {
-            selected:'1',
+            selected:'0',
         }
     },
     methods:{
-        isShow(id){
-            console.log(id);
-            this.selected=id
+        isShow(index){
+            this.selected=index+''
+              console.log(this.selected);
 
         }
     }

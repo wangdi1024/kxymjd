@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <nav-bar title="红包"></nav-bar>
+        <nav-bar title="优惠券"></nav-bar>
         <div class="has-head">
             <div class="mod-tab-nav">
                 <tabContainer :list='list'>
@@ -14,8 +14,8 @@
 </template>
 <script>
 import navBar from './common/nav-bar'
-import redList from './common/red-list'
 import tabContainer from './common/tab-container'
+import redList from './common/red-list'
 export default {
     name:'redPacket',
     components:{
@@ -25,10 +25,10 @@ export default {
     },
     data() {
         return {
-            list:[
-                {text:'已使用',slot:'iSUse'},
+             list:[
+                 {text:'已使用',slot:'notUse'},
                 {text:'未使用',slot:'notUse'},
-                {text:'已过期',slot:'overdue'},
+                {text:'已过期',slot:'notUse'},
             ],
         }
     },

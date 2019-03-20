@@ -27,9 +27,9 @@ export default {
      width: 100%;
 }
  .header img{
-     width: 0.35rem;
-     height: 0.35rem;
-     padding: 0 0.05rem;
+     width:35px;
+     height: 35px;
+     padding: 3px;
 }
  .serach{
      flex: 1;
@@ -45,6 +45,7 @@ export default {
      border:none;
      background-color: #fff;
      position: relative;
+     font-size: 14px;
 }
  .serach i{
      position: absolute;

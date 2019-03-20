@@ -6,6 +6,9 @@ import category from '@/components/category.vue'
 import member from '@/components/member.vue'
 import myPurse from '@/components/myPurse.vue'
 import redPacket from '@/components/redPacket.vue'
+import coupons from '@/components/coupons.vue'
+import IntegralMall from '@/components/IntegralMall.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -41,6 +44,16 @@ export default new Router({
       path:'/redPacket',
       name:'redPacket',
       component:redPacket,
+    },
+    {
+      path:'/coupons',
+      name:'coupons',
+      component:coupons,
+    },
+    {
+      path:'/IntegralMall',
+      name:'IntegralMall',
+      component:IntegralMall,
     },
   ]
 })
