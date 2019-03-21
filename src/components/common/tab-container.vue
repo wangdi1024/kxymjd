@@ -12,12 +12,19 @@
             <mt-tab-container v-model="selected">
                 <mt-tab-container-item id='0' >
                     <slot name="iSUse"></slot>
+                    <slot></slot>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="1">
                    <slot name="notUse"></slot>
+                   <slot></slot>
                 </mt-tab-container-item>
                 <mt-tab-container-item id="2">
                    <slot name="overdue"></slot>
+                   <slot></slot>
+                </mt-tab-container-item>
+                <mt-tab-container-item id="3">
+                   <slot name="casually"></slot>
+                   <slot></slot>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>
@@ -55,7 +62,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
     .seleted{
-        padding 0 15px;
+        padding 0 10px;
         height 100%;
         width 100%
         margin-top 20px;

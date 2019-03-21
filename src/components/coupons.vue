@@ -4,8 +4,8 @@
         <div class="has-head">
             <div class="mod-tab-nav">
                 <tabContainer :list='list'>
-                    <red-list slot="iSUse" Use='false' text='未使用' ></red-list>
-                    <red-list slot="notUse" text='已使用' Use='true'></red-list>
+                    <red-list slot="iSUse" Use='false' text='已使用' ></red-list>
+                    <red-list slot="notUse" text='未使用' Use='true'></red-list>
                     <red-list  slot="overdue" text='已过期' :list='list'></red-list>
                 </tabContainer>
             </div>

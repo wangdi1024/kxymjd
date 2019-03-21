@@ -8,6 +8,7 @@ import myPurse from '@/components/myPurse.vue'
 import redPacket from '@/components/redPacket.vue'
 import coupons from '@/components/coupons.vue'
 import IntegralMall from '@/components/IntegralMall.vue'
+import memberOrder from '@/components/memberOrder.vue'
 
 Vue.use(Router)
 
@@ -54,6 +55,11 @@ export default new Router({
       path:'/IntegralMall',
       name:'IntegralMall',
       component:IntegralMall,
+    },
+    {
+      path:'/memberOrder/:id',
+      name:'memberOrder',
+      component:memberOrder,
     },
   ]
 })

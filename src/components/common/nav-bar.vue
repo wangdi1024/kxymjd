@@ -3,7 +3,9 @@
         <div @click="back" slot="left">
             <mt-button icon="back"></mt-button>
         </div>
-        <mt-button icon="more" slot="right"></mt-button>
+        <mt-button  slot="right">
+            <slot></slot>
+        </mt-button>
     </mt-header>
 </template>
 <script>

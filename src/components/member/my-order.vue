@@ -2,32 +2,32 @@
     <div class="margin-t">
         <div class="nav-title">
             <a href="#" class="my-order">我的订单</a>
-            <a href="#" class="see-all">查看全部</a>
+            <router-link to="/memberOrder/1" href="#" class="see-all">查看全部</router-link>
         </div>
         <div class="order-nav">
             <div class="item">
-                <a href="#">
+                <router-link to="/memberOrder/2" href="#">
                     <img src="../../assets/img/order-state-pay.png" alt="待付款">
                     <p>待付款</p>
-                </a>
+                </router-link>
             </div>
             <div class="item">
-                <a href="#">
+                <router-link to="/memberOrder/3" href="#">
                     <img src="../../assets/img/order-state-send.png" alt="待发货">
                     <p>待发货</p>
-                </a>
+                </router-link>
             </div>
             <div class="item">
-                <a href="#">
+                <router-link to="/memberOrder/4" href="#">
                     <img src="../../assets/img/order-state-recive.png" alt="待收货">
                     <p>待收货</p>
-                </a>
+                </router-link>
             </div>
             <div class="item">
-                <a href="#">
+                <router-link to="/memberOrder/5" href="#">
                     <img src="../../assets/img/order-state-eval.png" alt="待评价">
                     <p>待评价</p>
-                </a>
+                </router-link>
             </div>
             <div class="item">
                 <a href="#">
