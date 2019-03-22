@@ -1,4 +1,5 @@
 <template>
+<!--常用功能-->
     <div class="margin-t">
         <div class="nav-title">
             <a href="#" class="my-order">常用功能</a>
@@ -6,8 +7,8 @@
         <ul class="order-nav">
             <li class="item">
                 <a href="#">
-                    <img src="../../assets/img/order-state-pay.png" alt="待付款">
-                    <p>待付款</p>
+                    <img src="../../assets/img/member-nav-addr.png" alt="收货地址">
+                    <p>收货地址</p>
                 </a>
             </li>
             <li class="item">

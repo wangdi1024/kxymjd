@@ -9,7 +9,9 @@ import redPacket from '@/components/redPacket.vue'
 import coupons from '@/components/coupons.vue'
 import IntegralMall from '@/components/IntegralMall.vue'
 import memberOrder from '@/components/memberOrder.vue'
-
+import memberPointorder from '@/components/memberPointorder.vue'
+import merchantsOrder from '@/components/merchantsOrder.vue'
+import memberRefund from '@/components/memberRefund.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -57,9 +59,31 @@ export default new Router({
       component:IntegralMall,
     },
     {
-      path:'/memberOrder/:id',
+      path:'/memberOrder',
       name:'memberOrder',
       component:memberOrder,
+      children:[
+          {
+            path:'/',
+            redirect: 'merchantsOrder'
+          },
+          {
+            path:'memberPointorder',
+            name:'memberPointorder',
+            component:memberPointorder,
+          },
+          {
+            path:'merchantsOrder/:id',
+            name:'merchantsOrder',
+            component:merchantsOrder,
+          },
+          {
+            path:'memberRefund',
+            name:'memberRefund',
+            component:memberRefund,
+          },
+      ],
+      linkActiveClass:'myActive'
     },
   ]
 })

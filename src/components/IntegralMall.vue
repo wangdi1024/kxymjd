@@ -116,6 +116,10 @@ export default {
     },
     mounted(){
        this.isSign =localStorage.getItem('isSign')
+       var currentDate=date.toLocaleDateString()
+       if(currentDate!=localStorage.getItem('sign')){
+            this.isSign=false
+       }
     },
     methods:{
         getFormatDate(n){

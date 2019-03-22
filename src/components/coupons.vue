@@ -1,4 +1,5 @@
 <template>
+<!--优惠券页面-->
     <div class="box">
         <nav-bar title="优惠券"></nav-bar>
         <div class="has-head">

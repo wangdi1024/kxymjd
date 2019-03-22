@@ -4,7 +4,7 @@
             <img src="../../assets/img/red_packet.png" alt="" v-if="isUse"  :Use='Use'>
             <img src="../../assets/img/used_red_packet.png" alt="" v-else>
         </div>
-        <div class="text">
+        <div class="packer-text">
             <h3 style="font-size:14px;color:#323232;font-weight:700;margin-left:3px">满168元可用<span style="font-size:12px;color:#909090;font-weight:400">(注: 扣除商家优惠后)</span></h3>
             <p  style="font-size:12px;color:#909090;margin-top:8px;margin-left:5px;">有效期至: 2019-04-01&nbsp 剩余:<span style="color:red">13</span>天</p>
             <p  style="font-size:12px;color:#909090;margin-top:8px;margin-left:5px;">适用范围:&nbsp<span style="color:#fc9109">快销易通用</span></p>
@@ -47,10 +47,10 @@ export default {
         position relative
         .red-img{
             width 52px;
-            height 67px;
+            height 100%;
             img {
                 width 100%;
-                height 100%
+                height 67px;    
 
             }
         }
@@ -64,8 +64,9 @@ export default {
                 transform translateX(15px)
             }
         }
-        .text{
+        .packer-text{
             flex 1
+            height 100%
         }
         .out_of_date{
             width 62px;

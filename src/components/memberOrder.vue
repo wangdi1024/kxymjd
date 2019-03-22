@@ -1,30 +1,21 @@
 <template>
     <div class="box">
-        <!-- 头部 -->
-        <orderHeader></orderHeader>
-        <div class="mui-content">
-            <div class="tab-nav">
-                <mt-navbar class="page-part"  v-model="selected">
-                    <mt-tab-item id="1">全部</mt-tab-item>
-                    <mt-tab-item id="2">待付款</mt-tab-item>
-                    <mt-tab-item id="3">待发货</mt-tab-item>
-                    <mt-tab-item id="4">待收货</mt-tab-item>
-                    <mt-tab-item id="5">待评价</mt-tab-item>
-                </mt-navbar>
+        <div class='header'>
+            <div class="left" @click="goBack">
+                <p class="mintui mintui-back"></p>
             </div>
-            <div class="tab-body">
-                <div class="not-order">
-                    <img src="../assets/img/no_data_icon.png" alt="">
-                    <p style="font-size:18px;color:black;">您还没有相关的订单</p>
-                    <p style="font-size:12px">可以去看看有哪些想买的</p>
-                </div>
-                <div class="order-list"></div>
+            <div class="content">
+                <router-link to="/memberOrder/merchantsOrder/1" href="#" >商家订单</router-link>
+                <router-link to="/memberOrder/memberPointorder" href="#" >积分订单</router-link>
+                <router-link to="/memberOrder/memberRefund" href="#">退款订单</router-link>
             </div>
-        </div>
+            <div class="right"></div>
+        </div> 
+        <router-view class="order-active"></router-view>   
     </div>
 </template>
 <script>
-import orderHeader from './member/order-header'
+
 import { Navbar, TabItem } from 'mint-ui';
 export default {
     name:"memberOrder",
@@ -34,42 +25,63 @@ export default {
     data() {
         return {
            
-            selected:"1",
+          
         }
     },
     mounted(){
-       console.log(this.$route.params.id);
-       this.selected=this.$route.params.id
+    //    console.log(this.$route.params.id);
+    //    this.selected=this.$route.params.id
     },
     methods:{
-      
+        goBack(){
+            this.$router.replace({name:"member"});
+            },
     }
 }
 </script>
 <style lang="stylus" scoped>
 .box{
     overflow hidden
-
-    .mui-content{
-        margin-top 50px;
-        .tab-body{
-            // position relative
-            .not-order{
-                position absolute
-                left:50%;
-                transform translateX(-50%)
-                top:150px;
-                text-align center;
-                img {
-                    width 100px;
-                    height 100px;
-                }
-                p{
-                    margin-top 10px;
-                }
+    .header{
+        width 100%;
+        height 50px;
+        position: fixed;
+        z-index: 999;
+        display flex;
+        background-color #fff
+        align-items center;
+        .left, .right{
+            width 30px;
+            height 100%;
+            text-align center
+            line-height 50px;
+        }
+        .content{
+            flex 1;
+            height 100%;
+            text-align center
+            display flex;
+            align-items center;
+            justify-content center;
+            a{
+                width 66px
+                height 30px
+                display inline-block;
+                line-height 30px;
+                font-size 14px;
+                border 1px solid #f2f2f2;
+                border-radius 5px;
+                margin-left 10px;
+                color #909090;
             }
         }
     }
+   .router-link-active,.myActive{
+        background-color:#f2f2f2;
+        color:#333;
+        font-weight 700;
+    }
+  
 }
 </style>
 

@@ -3,7 +3,7 @@
         <nav-bar title="我的钱包" id="money"></nav-bar>
         <div class="has-head  clearfix">
             <div class="wallet-survey">
-                <div class="text">
+                <div class="purse-text">
                     <p class="min-font" style="font-size:14px;color:#fff">钱包总金额 （元）</p>
                     <p class="strong-font">0.00</p>
                     <p class="min-font" style="font-size:14px;color:#fff">提现中金额：￥0.00</p>
@@ -56,7 +56,7 @@ html,body{
             padding-left 25px; 
             padding-top 25px;
             margin-bottom 10px;
-            .text{
+            .purse-text{
                 width 150px;
                 // height 130px;
                 p:nth-child(2){
