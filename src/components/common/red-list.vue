@@ -1,4 +1,5 @@
 <template>
+<!--红包li及优惠券li的组件，需要传递一个Use，Use：布尔值，是否使用，还需要传递一个text，text：字符串-->
     <li class="item" >
         <div class="red-img">
             <img src="../../assets/img/red_packet.png" alt="" v-if="isUse"  :Use='Use'>

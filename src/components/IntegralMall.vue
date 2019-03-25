@@ -115,6 +115,7 @@ export default {
         }
     },
     mounted(){
+         var date=new Date()
        this.isSign =localStorage.getItem('isSign')
        var currentDate=date.toLocaleDateString()
        if(currentDate!=localStorage.getItem('sign')){

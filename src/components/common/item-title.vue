@@ -1,4 +1,5 @@
 <template>
+<!--分类商品上面的title-->
     <li class="item-title">
         <div class="line"></div>
             <span>{{title}}</span>

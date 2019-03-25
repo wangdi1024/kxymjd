@@ -1,4 +1,5 @@
 <template>
+<!--首页的公告栏，需要传递一个time，表示动画的时长，还要传递一个text，公告的数据-->
     <div>
         <div class="textBox">
             <transition name="slide" :time='time'>

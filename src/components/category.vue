@@ -1,6 +1,10 @@
 <template>
     <div>
-        <nav-title></nav-title>
+        <nav-title placeholder='请输入你要搜索的内容'>
+            <img src="../assets/img/home_logo.png" alt="" slot="img">
+            <i class="fa fa-comment-o" slot="icon"></i>
+            <i class="fa fa-qrcode" slot="icon"></i>
+        </nav-title>
         <div class="main clearfix mui-content">
             <left-list :list='list'></left-list>
             <div class="right">
@@ -11,10 +15,10 @@
                             <ul class="clearfix" style="min-height:100%;touch-action: none;">
                                 <item-title title='推荐分类'></item-title>
                                 <li v-for="(item) in rightlist" :key="item.id" class="show-item">
-                                    <a href="">
+                                    <router-link to="/categoryIndex" href="">
                                         <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1068.jpg" alt="">
                                         <p>{{item.title}}</p>
-                                    </a>
+                                    </router-link>
                                 </li>
                             </ul>
                         </div>
@@ -22,9 +26,9 @@
                             <item-title title="品牌推荐"></item-title>
                             <ul class="clearfix">
                                 <li v-for="(item) in bottomList" :key="item.id">
-                                    <a href="#">
+                                    <router-link to="/categoryIndex" href="#">
                                         <img :src="item.img" alt="">
-                                    </a>
+                                    </router-link>
                                 </li>
                             </ul>
                         </div>

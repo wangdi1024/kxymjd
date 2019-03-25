@@ -1,4 +1,5 @@
 <template>
+<!--tab组件 需要传递一个list，list：数组，tab的数据-->
     <div>
         <div class="nav">
             <mt-navbar class="page-part" v-model="selected">

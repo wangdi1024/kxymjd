@@ -1,7 +1,11 @@
 <template>
     <div>
         <!-- 头部 -->
-        <nav-title></nav-title>
+        <nav-title placeholder='请输入你要搜索的内容'>
+             <img src="../assets/img/home_logo.png" alt="" slot="img">
+              <i class="fa fa-comment-o" slot="icon"></i>
+                <i class="fa fa-qrcode" slot="icon"></i>
+        </nav-title>
         <!-- 轮播 -->
         <div class="swiper">
             <mt-swipe :auto="4000">
@@ -298,9 +302,13 @@
     </div>
 </template>
 <script>
+// 引入Toast弹出框
  import { Toast } from 'mint-ui';
+//  引入头部组件
  import navTitle from './common/nav-title.vue'
+//  引入热卖商品的li组件
  import hotGoods from './common/hot-goods.vue'
+//  引入公告栏组件
  import publicTitle from './common/public-title.vue'
 export default {
     name:'index',
@@ -317,12 +325,14 @@ export default {
             ins:0,
             num:0,
             sub:0,
+            // 排序 判断是否显示下面一行的li的字段
             show:false,
             storesNav:{
                nav1:[{id:1,name:'送货最快'},{id:2,name:'口碑好'},{id:3,name:'起订量'},{id:4,name:'满减活动'}],
                nav2:[{id:1,name:'食品饮料'},{id:2,name:'居家日用'},{id:3,name:'个人护理'},{id:4,name:'个人护理'},{id:5,name:'厨房用具'},{id:6,name:'厨房用具'},{id:7,name:'厨房用具'},{id:8,name:'厨房用具'}]
             },
-            heart:false,
+
+            // 附近商家的数据
             shopDetail:[
                 {
                 id:1,
@@ -345,6 +355,7 @@ export default {
                 heart:false,
                 },
             ],
+            // 热卖商品li组件需要传递的数据
             hotGoods:[
                 {
                 id:1,
@@ -365,6 +376,7 @@ export default {
                 sale:"¥333",
                 },
             ],
+            // 公告栏数据
             textArr:[
                "我是谁",
                "我是谁",
@@ -385,6 +397,7 @@ export default {
         document.querySelector('body').setAttribute('style', 'background-color:#f8f8f8')
   },
     methods: {
+    // 附近商家下面的一排点击事件和点到排序显示隐藏的li
         active (index) {
             this.ins=index
             //    console.log(index);
@@ -395,14 +408,17 @@ export default {
                 //    console.log(this.show);
                }
         },
+        // 隐藏的li的点击显示高亮事件
         serach(index){
             this.num=index
             // console.log(index);
         },
+         // 未隐藏的li的点击显示高亮事件
         serachHot(index){
             this.sub=index
             // console.log(index);
         },
+         // 收藏事件
         shoreUp(el,index){
             // this.shopDetail.heart=!this.shopDetail.heart
             if(el==true){

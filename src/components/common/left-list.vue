@@ -1,4 +1,5 @@
 <template>
+<!--分类页面左边list 需要传递一个list数组-->
     <div class="left clearfix">
         <div class="mui-scroll-wrapper" style="top: 0px; bottom: 0px">
 	        <div class="mui-scroll">
@@ -72,6 +73,8 @@ export default {
             flex-direction: column;
             text-align: center;
             margin-bottom :0px;
+            font-size :12px;
+            line-height 15px;
         }
          p.active{
             border-left: 3px solid  #ff3b3c;

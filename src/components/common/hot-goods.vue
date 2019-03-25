@@ -1,4 +1,5 @@
 <template>
+<!--热门商品加入购物车的组件-->
     <ul class="hot-stores-list">
         <li v-for=" item in hotGoods" :key="item.id">
             <a href="#">
@@ -12,11 +13,15 @@
                 <div class="detail">
                     <p>条码 : {{item.tiaoma}}}</p>
                     <p>成立时间 : {{item.banrd}}</p>
-                    <p>起  售  额 :{{item.count}}</p>
+                    <p><del>原价 :{{item.count}}</del></p>
+                    <p>
+                        <span class="text-price1">¥</span><span class="text-price2">13.9<span>/包  ¥166.80/箱</span></span>
+                    </p>
                 </div>
-                <a href="#" class="favourable">活动热卖价：{{item.sale}}</a>
+                <!-- <a href="#" class="favourable">活动热卖价：{{item.sale}}</a> -->
                 <div class="enterShop">
-                    <a href="#" @click="addCart()">加入购物车<i class="fa fa-shopping-cart"></i></a>
+                    <a href="#" @click="addCart()">加入购物车</a>
+                    <!-- <i class="fa fa-shopping-cart"></i> -->
                 </div>
             </div>
         </li>
@@ -44,6 +49,9 @@ export default {
 }
 </script>
 <style>
+    .hot-stores-list{
+        padding: 0px 5px;
+    }
      .hot-stores-list li{
          display: -webkit-box;
         display: -webkit-flex;
@@ -98,10 +106,10 @@ export default {
     }
      .describe-content .enterShop{
          position: absolute;
-         width: 88px;
+         width: 63px;
         height: 23px;
         display: inline-block;
-        right: 0rem;
+        right: 0.1rem;
         bottom: 15px;
        background: -webkit-linear-gradient(left,#e63f15,#ff273b);
         border-radius: 10px;
@@ -112,6 +120,9 @@ export default {
           color: #f2f2f2;
           text-align: center;
           line-height: 23px;
+          width: 100%;
+          height: 100%;
+          font-size: 10px;
       }
 </style>
 

@@ -20,7 +20,7 @@ import { Navbar, TabItem } from 'mint-ui';
 export default {
     name:"memberOrder",
     components:{
-        orderHeader
+        
     },
     data() {
         return {
