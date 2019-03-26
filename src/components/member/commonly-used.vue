@@ -6,10 +6,10 @@
         </div>
         <ul class="order-nav">
             <li class="item">
-                <a href="#">
+                <router-link to="/delivery">
                     <img src="../../assets/img/member-nav-addr.png" alt="收货地址">
                     <p>收货地址</p>
-                </a>
+                </router-link>
             </li>
             <li class="item">
                 <a href="#">

@@ -5613,3 +5613,7 @@ body > .mui-progressbar
 
     border: 0;
 }
+input {
+    margin: 0px;
+    font-size: 14px;
+}

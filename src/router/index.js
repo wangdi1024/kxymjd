@@ -27,6 +27,8 @@ import memberRefund from '@/components/memberRefund.vue'
 import categoryIndex from '@/components/categoryIndex.vue'
 //引入收货地址页面
 import delivery from '@/components/delivery.vue'
+//引入更改地址页面
+import updateDelivery from '@/components/updateDelivery.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -109,6 +111,11 @@ export default new Router({
       path:'/delivery',
       name:'delivery',
       component:delivery,
+    },
+    {
+      path:'/updateDelivery',
+      name:'updateDelivery',
+      component:updateDelivery,
     },
   ]
 })

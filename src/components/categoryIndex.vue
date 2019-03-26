@@ -30,8 +30,8 @@
                 <div class="sort-check" ref="sortCheck" style="height: 37px; overflow-y: hidden;">
                     <span class="brand_more" @click="brandMore">更多<i class="fa fa-sort-amount-desc"></i></span>
                     <ul>
-                        <li v-for="(item ,index) in brandList" :key="index">
-                            <a href="javascript:;">{{item.brand}}</a>
+                        <li ref="sortUl">
+                            <a href="javascript:;" v-for="(item ,index) in brandList" :key="index">{{item.brand}}</a>
                         </li>
                     </ul>
                 </div>
@@ -54,6 +54,7 @@
 <script>
 // 引入头部组件
 import navTitle from './common/nav-title'
+//引入左侧分类组件
 import leftList from './common/left-list'
 import hotGoods from './common/hot-goods'
 import { throws } from 'assert';
@@ -270,6 +271,9 @@ export default {
             ],
         }
     },
+    mounted(){
+          document.querySelector('body').setAttribute('style', 'overflow-y: hidden;position: fixed;width:100%')
+    },
     methods: {
         // 头部返回事件
         goBack(){
@@ -282,11 +286,13 @@ export default {
         //更多品牌事件
         brandMore(){
             this.isShow=!this.isShow
+            var height= this.$refs.sortUl.offsetHeight
+            console.log(height);
             if(this.isShow==true){
                 //  console.log(111);
                 // console.log(this.$refs.sortCheck.style.overflowY);
                 this.$refs.sortCheck.style.overflowY='scroll'
-                this.$refs.sortCheck.style.height=584+'px'
+                this.$refs.sortCheck.style.height=height+'px'
             }else{
                 this.$refs.sortCheck.style.overflowY='hidden'
                 this.$refs.sortCheck.style.height=37+'px'
@@ -301,6 +307,7 @@ export default {
     .content{
         margin-top 50px;
         // 分类选择样式
+        height calc(100vh-0.86rem)
         .com-top {
             background-color #fff
             position: relative;
@@ -365,12 +372,10 @@ export default {
                     display flex;
                     flex-wrap wrap;
                     li{
-                        width 64px;
-                        height 26px;
-                        margin 5px 0px 5px 14px;
                         a{
-                            width 100%
-                            height 100%
+                           width 64px;
+                            height 26px;
+                            margin 5px 0px 5px 14px;
                             display inline-block;
                             text-align center;
                             line-height 26px;

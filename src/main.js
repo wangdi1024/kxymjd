@@ -6,6 +6,8 @@ import Es6Promise from 'es6-promise'
 Es6Promise.polyfill()
 import App from './App'
 import router from './router'
+//导入vuex
+import store from './store/index'
 import $ from 'jquery'
 Vue.prototype.$ = $
 // import flex from 'raziel-flex'
@@ -29,6 +31,7 @@ Vue.prototype.mui = mui
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
