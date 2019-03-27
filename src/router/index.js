@@ -29,6 +29,10 @@ import categoryIndex from '@/components/categoryIndex.vue'
 import delivery from '@/components/delivery.vue'
 //引入更改地址页面
 import updateDelivery from '@/components/updateDelivery.vue'
+// 引入新增地址页面
+import insertDelivery from '@/components/insertDelivery.vue'
+// 引入设置页面
+import information from '@/components/information.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -116,6 +120,16 @@ export default new Router({
       path:'/updateDelivery',
       name:'updateDelivery',
       component:updateDelivery,
+    },
+    {
+      path:'/insertDelivery',
+      name:'insertDelivery',
+      component:insertDelivery,
+    },
+    {
+      path:'/information',
+      name:'information',
+      component:information,
     },
   ]
 })

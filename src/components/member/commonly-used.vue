@@ -12,10 +12,10 @@
                 </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-send.png" alt="待发货">
-                    <p>待发货</p>
-                </a>
+                <router-link to="/information" href="#">
+                    <img src="../../assets/img/member-nav-setting.png" alt="设置">
+                    <p>设置</p>
+                </router-link>
             </li>
             <li class="item">
                 <a href="#">

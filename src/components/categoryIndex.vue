@@ -307,7 +307,7 @@ export default {
     .content{
         margin-top 50px;
         // 分类选择样式
-        height calc(100vh-0.86rem)
+        height 100%;
         .com-top {
             background-color #fff
             position: relative;
@@ -394,6 +394,8 @@ export default {
             margin-top: 0.37rem;
             height: 560px;
             width: 100%;
+            position relative
+            z-index 1
             .left{
                 width 75px;
             }

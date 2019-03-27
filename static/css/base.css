@@ -1,6 +1,6 @@
  html {overflow-y:scroll; font-size:12px}
  body {margin:0; padding:0px 0px 0.48rem 0px; font:12px"\5B8B\4F53",sans-serif; background-color: #fff;}
- div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;border:0px !important;}
+ div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;border:0px;}
  table,td,tr,th{font-size:12px;}
  li{list-style-type:none;}
  img{vertical-align:middle;border:0;}
@@ -54,4 +54,5 @@ h1.mint-header-title,.mint-button-text{
 input{
     margin: 0px !important;
     height: 100% !important;
+    border: 0px !important;
 }

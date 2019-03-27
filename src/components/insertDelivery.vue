@@ -1,25 +1,26 @@
 <template>
+<!--新增地址页面-->
     <div class="box">
-        <nav-bar title="修改收货地址"></nav-bar>
+        <nav-bar title="新增收货地址"></nav-bar>
         <div class="mui-content content">
             <form method="post" name="member-address">
                 <ul>
-                    <deliveryList itemTitle='收货人姓名' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='收货人姓名' style="height:46px;lineHeight:46px">
                             <input type="text" name="true_name" v-model="name" value="name">
                     </deliveryList>
-                    <deliveryList itemTitle='手机号码' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='手机号码' style="height:46px;lineHeight:46px">
                             <input type="text" name="iPhone" v-model="iPhone" >
                     </deliveryList>
-                    <deliveryList itemTitle='所在区域' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='所在区域' style="height:46px;lineHeight:46px">
                             <input type="text" name="address" v-model="address" >
                     </deliveryList>  
-                     <deliveryList itemTitle='详细地址' style="height:46px;lineHeight:46px;titleWidth:120px">
-                            <input type="text" name="DetailedAddress" v-model="DetailedAddress" >
-                    </deliveryList>  
+                    <deliveryList itemTitle='详细地址' style="height:46px;lineHeight:46px">
+                            <input type="text" name="DetailedAddress" v-model="DetailedAddress">
+                    </deliveryList>
                     <li class="item">
                         <div class="item-content">
-                           <div class="defult item-title">设为默认地址</div>
-                           <label class="ui-control">
+                        <div class="defult item-title">设为默认地址</div>
+                        <label class="ui-control">
                                 <input type="radio" name="type" checked="checked" @click="defult">
                                 <span :class="is_default==1?'ui-radio-x':'ui-radio'"></span>
                                 <!-- <span class="ui-radio" v-else></span> -->
@@ -40,6 +41,7 @@ import navBar from './common/nav-bar'
 //引入 联系人信息组件
 import deliveryList from './common/delivery-list'
 export default {
+    name:'insertDelivery',
     components:{
         navBar,
         deliveryList,
@@ -53,19 +55,8 @@ export default {
             is_default:1,
         }
     },
-    mounted(){
-        this.name=this.$store.state.ContactAddress.consigneeName
-        this.iPhone=this.$store.state.ContactAddress.iPhone
-        this.address=this.$store.state.ContactAddress.address
-        this.DetailedAddress=this.$store.state.ContactAddress.DetailedAddress
-         console.log( this.$store.state);
-        //修改body背景颜色
-        document.querySelector('body').setAttribute('style','background-color：#F2F2F2')
-        console.log(this.is_default);
-    },
     methods:{
-        // 设置为默认地址
-        defult(){
+         defult(){
            if(this.is_default==1){
                this.is_default=0
             //    console.log(this.is_default);
@@ -81,12 +72,11 @@ export default {
 </script>
 <style lang="stylus" scoped>
     .box{
-        overflow hidden;
+        overflow hidden
         .content{
             margin-top 60px;
-            background-color #F2F2F2
             ul{
-                li.item{
+                 li.item{
                     color: #232323;
                     background-color: #fff;
                     padding 0px 10px;
@@ -132,7 +122,7 @@ export default {
                         }
                     }
                 }
-                li:last-child{
+                 li:last-child{
                     margin-top 20px;
                 }
             }
@@ -145,7 +135,7 @@ export default {
                     width 100%;
                 }
             }
-
         }
     }
 </style>
+

@@ -35,13 +35,14 @@
                 </div>
             </div>
              <div class="save">
-                <mt-button type="primary" size="large" style="border-radius:20px;color:#fc9109">+新增地址</mt-button>
+                 <router-link to="/insertDelivery">
+                    <mt-button type="primary" size="large" style="border-radius:20px;color:#fc9109">+新增地址</mt-button>
+                </router-link>
             </div>
         </div>
     </div>
 </template>
 <script>
-import { Radio } from 'mint-ui';
 import navBar from './common/nav-bar'
 export default {
     name:'delivery',
@@ -188,9 +189,13 @@ export default {
                 width 355px
                 margin-top 50px;
                 transform translateX(10px)
-                .mint-button--primary{
-                    background-color:#51b435;
-                    width 100%;
+                a{
+                    width 100%
+                    height 100%
+                    .mint-button--primary{
+                        background-color:#51b435;
+                        width 100%;
+                    }
                 }
             }
         }
