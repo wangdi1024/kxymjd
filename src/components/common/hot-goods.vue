@@ -11,17 +11,19 @@
                 <i class="icon-goods-act"></i>
                 <a href="#" class="shopName">{{item.name}}</a>
                 <div class="detail">
-                    <p>条码 : {{item.tiaoma}}}</p>
+                    <!-- <p>条码 : {{item.tiaoma}}</p>
                     <p>成立时间 : {{item.banrd}}</p>
                     <p><del>原价 :{{item.count}}</del></p>
                     <p>
                         <span class="text-price1">¥</span><span class="text-price2">13.9<span>/包  ¥166.80/箱</span></span>
-                    </p>
+                    </p> -->
+                    <slot></slot>
                 </div>
                 <!-- <a href="#" class="favourable">活动热卖价：{{item.sale}}</a> -->
-                <div class="enterShop">
+                <div class="enterShop" :style="{backgroundColor:bgcolor}">
                     <a href="#" @click="addCart()">加入购物车</a>
                     <!-- <i class="fa fa-shopping-cart"></i> -->
+                    <slot name="icon"></slot>
                 </div>
             </div>
         </li>
@@ -31,13 +33,7 @@
 import { Toast } from 'mint-ui';
 export default {
     name:'hotGoods',
-    props:{
-        hotGoods:{
-            required: true,
-            type: Array,
-            default: () => []
-        }
-    },
+    props:['hotGoods','bgcolor'],
     methods:{
         addCart(){
            Toast({
@@ -90,12 +86,12 @@ export default {
     .describe-content a.shopName{
         display: block;
         font-size: 16px;
-        padding-bottom: 2px;
+        padding-bottom: 5px;
         color: #232323;
         font-size: 14px;
     }
     .describe-content .detail p{
-        padding-bottom: 2px;
+        padding-bottom: 4px;
         color: #909090 ;
         font-size: 12px;
         
@@ -106,15 +102,22 @@ export default {
     }
      .describe-content .enterShop{
          position: absolute;
-         width: 63px;
+         width: auto;
         height: 23px;
         display: inline-block;
         right: 0.1rem;
         bottom: 15px;
-       background: -webkit-linear-gradient(left,#e63f15,#ff273b);
+       /* background: -webkit-linear-gradient(left,#e63f15,#ff273b); */
         border-radius: 10px;
-        /* text-align: center */
+        text-align: center;
+        display: flex;
+        padding: 0 10px;
      }
+      .describe-content .enterShop i{
+          text-align: center;
+          line-height:23px;
+          color: #fff;
+      }
       .describe-content .enterShop a{
           display: block;
           color: #f2f2f2;

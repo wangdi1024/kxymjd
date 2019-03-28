@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="box">
         <div class="tips-warp">
             <img src="../../assets/img/none-data.png" alt="">
             <p>暂时无数据</p>
@@ -12,13 +12,14 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.box{
         .tips-warp{
+            z-index 999
             height 140px;
             width 100px;
-            position absolute
-            left 50%;
-            transform translateX(-50%)
-            top:100px;
+            // position absolute
+            transform translateX(148%)
+            margin-top 140px;
             img {
                 width 100%;
                 height 100px;
@@ -28,5 +29,6 @@ export default {
                 font-size 16px;
             }
         }
+}
 </style>
 

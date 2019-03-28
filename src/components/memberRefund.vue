@@ -1,6 +1,6 @@
 <template>
 <!--退款订单-->
-    <div class="content">
+    <div class="content mui-content">
         <notData v-if="isshow"></notData>
     </div>
 </template>
@@ -23,7 +23,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
     .content{
-        margin-top 50px;
+        
     }
 </style>
 

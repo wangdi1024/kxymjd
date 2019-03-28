@@ -17,6 +17,9 @@ import Mint from 'mint-ui'
 Vue.use(Mint)
 //引入mint-ui的样式
 import 'mint-ui/lib/style.css'
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
 //引入字体图标
 import './assets/iconfont/css/font-awesome.css'
 // import vueTouch from 'kim-vue-touch'

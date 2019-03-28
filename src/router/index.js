@@ -33,6 +33,15 @@ import updateDelivery from '@/components/updateDelivery.vue'
 import insertDelivery from '@/components/insertDelivery.vue'
 // 引入设置页面
 import information from '@/components/information.vue'
+//引入关于我们页面
+import aboutUs from '@/components/aboutUs.vue'
+//引入关于我们详情页面
+import aboutDetail from '@/components/aboutDetail.vue'
+//引入商品收藏页面
+import myFavorites from '../components/myFavorites.vue'
+//引入我的足迹页面
+import goodsBrowse from '../components/goodsBrowse.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -131,5 +140,26 @@ export default new Router({
       name:'information',
       component:information,
     },
+    {
+      path:'/aboutUs',
+      name:'aboutUs',
+      component:aboutUs,
+    },
+    {
+      path:'/aboutDetail/:title',
+      name:'aboutDetail',
+      component:aboutDetail,
+    },
+    {
+      path:'/myFavorites/:selected',
+      name:'/myFavorites',
+      component:myFavorites,
+    },
+    {
+      path:'/goodsBrowse/:selected',
+      name:'/goodsBrowse',
+      component:goodsBrowse,
+    }
+      
   ]
 })

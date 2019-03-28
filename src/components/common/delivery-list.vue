@@ -1,7 +1,7 @@
 <template>
     <li class="item">
         <div class="item-content" :style="{height: height,lineHeight:lineHeight}">
-            <div class="name item-title">{{itemTitle}}</div>
+            <div class="name item-title" :style="{width:width}">{{itemTitle}}</div>
             <slot></slot>
         </div>
     </li>
@@ -9,7 +9,7 @@
 <script>
 export default {
     name:'deliveryList',
-    props:['itemTitle','height','lineHeight',],
+    props:['itemTitle','height','lineHeight','width'],
 }
 </script>
 <style lang="stylus" scoped>

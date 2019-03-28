@@ -296,7 +296,14 @@
                 <span class="mod-title-text">热卖商品</span>
             </div>
             <div class="shop_template">
-                <hotGoods :hotGoods='hotGoods'></hotGoods>
+                <hotGoods :hotGoods='hotGoods' v-for="(item ,index) in hotGoods" key='index' bgcolor='#ff273b'>
+                    <p>条码 : {{item.goods_barcode}}</p>
+                    <p>{{item.store_name}}}</p>
+                    <p><del>原价 :{{item.goods_price}}</del></p>
+                    <p style="color:#ff273b;font-weight:700">
+                        <span class="text-price1" style="font-size:0.16rem">¥{{item.goods_activity_price}}</span><span class="text-price2">/包<span> ¥{{item.goods_price}}/箱</span></span>
+                    </p>
+                </hotGoods>
             </div>
         </div>
     </div>
@@ -362,18 +369,20 @@ export default {
                 img:require('../assets/img/hot-shop.jpg'),
                 name:"深圳市礼尚汇贸易有限公司",
                 banrd:'百草味  三只松鼠',
-                tiaoma:"222222222",
-                count:300,
-                sale:"¥333",
+                goods_barcode:6923308815678,
+                goods_activity_price:300,
+                store_name:'商家 : 深圳市广昌盛贸易有限公司',
+                 goods_price:300,
                 },
                 {
                 id:2,
                 img:require('../assets/img/hot-shop.jpg'),
                 name:"深圳市礼尚汇贸易有限公司",
                 banrd:'百草味  三只松鼠',
-                tiaoma:"3333333",
-                count:300,
-                sale:"¥333",
+                goods_barcode:6923308815678,
+                goods_activity_price:300,
+                store_name:'商家 : 深圳市广昌盛贸易有限公司',
+                 goods_price:300,
                 },
             ],
             // 公告栏数据

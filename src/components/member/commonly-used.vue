@@ -12,34 +12,34 @@
                 </router-link>
             </li>
             <li class="item">
-                <router-link to="/information" href="#">
+                <router-link to="/information" >
                     <img src="../../assets/img/member-nav-setting.png" alt="设置">
                     <p>设置</p>
                 </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-recive.png" alt="待收货">
-                    <p>待收货</p>
-                </a>
+                <router-link to="/myFavorites/1">
+                    <img src="../../assets/img/member-nav-collectgoods.png" alt="商品收藏">
+                    <p>商品收藏</p>
+                </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-eval.png" alt="待评价">
-                    <p>待评价</p>
-                </a>
+                <router-link to="/myFavorites/2" href="#">
+                    <img src="../../assets/img/member-nav-collectstore.png" alt="经销商收藏">
+                    <p>经销商收藏</p>
+                </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
+                <router-link to="/goodsBrowse/1" href="#">
+                    <img src="../../assets/img/goodsbrowse.png" alt="我的足迹">
+                    <p>我的足迹</p>
+                </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
+                <router-link to="/goodsBrowse/2" href="#">
+                    <img src="../../assets/img/often_goods.png" alt="退款/售后">
+                    <p>常购清单</p>
+                </router-link>
             </li>
             <li class="item">
                 <a href="#">

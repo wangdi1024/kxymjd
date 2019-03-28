@@ -121,7 +121,8 @@ module.exports = {
       $:"jquery", 
       jQuery:"jquery", 
      "windows.jQuery":"jquery"
-		})
+    }),
+
 
 	]
 }
