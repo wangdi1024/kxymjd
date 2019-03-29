@@ -296,7 +296,7 @@
                 <span class="mod-title-text">热卖商品</span>
             </div>
             <div class="shop_template">
-                <hotGoods :hotGoods='hotGoods' v-for="(item ,index) in hotGoods" key='index' bgcolor='#ff273b'>
+                <hotGoods :hotGoods='hotGoods' v-for="(item ,index) in hotGoods" :key='index' bgcolor='#ff273b'>
                     <p>条码 : {{item.goods_barcode}}</p>
                     <p>{{item.store_name}}}</p>
                     <p><del>原价 :{{item.goods_price}}</del></p>

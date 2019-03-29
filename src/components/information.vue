@@ -140,7 +140,7 @@
             退出登录
         </a>
         <div style="color:#b4b4b4;text-align:center;padding:.2rem">
-		    <p style="color:#b4b4b4">Copyright 2017-2019 快销易 All rights reserved<br></p><p style="color:#b4b4b4">粤ICP备16082737号-1</p>
+		    <p style="color:#b4b4b4; margin-bottom:0.1rem">Copyright 2017-2019 快销易 All rights reserved<br></p><p style="color:#b4b4b4">粤ICP备16082737号-1</p>
 	    </div>
     </div>
 </div>
@@ -297,6 +297,7 @@ export default {
                 position absolute
                 top:23px;
                 right:2px;
+                font-weight 400
             }
         }
          .business-img {

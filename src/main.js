@@ -10,8 +10,6 @@ import router from './router'
 import store from './store/index'
 import $ from 'jquery'
 Vue.prototype.$ = $
-// import flex from 'raziel-flex'
-// flex(800)
 import '../test/unit/rem'
 import Mint from 'mint-ui'
 Vue.use(Mint)

@@ -48,7 +48,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center; */
-  color: #666;
+  /* color: #666; */
 
 }
 body{
@@ -66,14 +66,19 @@ body{
   position: fixed;
   bottom: 0;
   z-index: 999;
+  box-shadow: 0 0 10px #9c9696;
 }
 .mint-tab-item{
-  padding: 7px 0px;
+  padding: 6px 0px 0px 0px;
+  
 }
 .mint-tab-item a i{
   color: #666 !important;
 }
 .mint-tabbar > .mint-tab-item.is-selected {
+  color: #fc9109;
+}
+.mint-tabbar > .mint-tab-item.is-selected p{
   color: #fc9109;
 }
 </style>

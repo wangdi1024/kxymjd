@@ -1,4 +1,5 @@
 <template>
+<!--浏览足迹-->
     <div class="box">
         <nav-bar :title="title"></nav-bar>
         <div class="content">
@@ -40,8 +41,11 @@
     </div>
 </template>
 <script>
+// 导入导航栏组件
 import navBar from './common/nav-bar'
+// 导入没有数据的图片的组件
 import notData from './member/not-data'
+// 导入没有商品栏的组件
 import hotGoods from './common/hot-goods'
 export default {
     name:'goodsBrowse',
@@ -54,10 +58,11 @@ export default {
         return {
             title:'',
             selected:this.$route.params.selected,
-             // 判断商品栏无数据图片是否显示的字段
+             // 判断我的足迹有无数据图片是否显示的字段
             goods:1,
-            // 判断经销商栏无数据图片是否显示的字段
+            // 判断常购清单无数据图片是否显示的字段
             OftenBuy:2,
+            // 我的足迹
             hotGoods:[
                 {
                 id:1,
@@ -78,6 +83,7 @@ export default {
                 goods_barcode:6923308815678
                 },
             ],
+            // 常购清单
             OftenBuyList:[
                 {
                 id:1,
@@ -103,15 +109,17 @@ export default {
     },
     mounted(){
         document.querySelector('body').setAttribute('style','padding:0px')
+        // 如果URL带过来的selected参数是1 则title显示浏览足迹，2则显示常购清单
         if(this.selected==1){
             this.title='浏览足迹'
         }else{
             this.title='常购清单'
         }
+        //如果浏览足迹的长度大于0表示有商品，则不显示无商品图片
          if(this.hotGoods.length>0){
             this.goods=2
         }
-          //如果商家数组的长度大于0表示有商品，则不显示无商品图片
+          //如果常购清单的长度大于0表示有商品，则不显示无商品图片
         if(this.OftenBuyList.length>0){
             this.OftenBuy=3
         }

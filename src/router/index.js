@@ -41,6 +41,16 @@ import aboutDetail from '@/components/aboutDetail.vue'
 import myFavorites from '../components/myFavorites.vue'
 //引入我的足迹页面
 import goodsBrowse from '../components/goodsBrowse.vue'
+// 引人帮助中心页面
+import helpCenter from '../components/helpCenter.vue'
+// 引入常见问题页面
+import helpList from '../components/helpList.vue'
+// 引入我要投诉页面
+import myComplaint from '../components/myComplaint.vue'
+//引入反馈记录页面
+import feedback from '../components/feedback.vue'
+//引入反馈详情页面
+import myFeedback from '../components/myFeedback.vue'
 
 Vue.use(Router)
 
@@ -159,7 +169,32 @@ export default new Router({
       path:'/goodsBrowse/:selected',
       name:'/goodsBrowse',
       component:goodsBrowse,
-    }
+    },
+    {
+      path:'/helpCenter',
+      name:'helpCenter',
+      component:helpCenter,
+    },
+    {
+      path:'/helpList',
+      name:'helpList',
+      component:helpList,
+    },
+    {
+      path:'/myComplaint',
+      name:'myComplaint',
+      component:myComplaint,
+    },
+    {
+      path:'/feedback',
+      name:'feedback',
+      component:feedback,
+    },
+    {
+      path:'/myFeedback',
+      name:'myFeedback',
+      component:myFeedback,
+    },
       
   ]
 })

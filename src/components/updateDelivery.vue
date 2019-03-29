@@ -4,16 +4,16 @@
         <div class="mui-content content">
             <form method="post" name="member-address">
                 <ul>
-                    <deliveryList itemTitle='收货人姓名' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='收货人姓名'style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
                             <input type="text" name="true_name" v-model="name" value="name">
                     </deliveryList>
-                    <deliveryList itemTitle='手机号码' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='手机号码'style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
                             <input type="text" name="iPhone" v-model="iPhone" >
                     </deliveryList>
-                    <deliveryList itemTitle='所在区域' style="height:46px;lineHeight:46px;titleWidth:120px">
+                    <deliveryList itemTitle='所在区域' style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
                             <input type="text" name="address" v-model="address" >
                     </deliveryList>  
-                     <deliveryList itemTitle='详细地址' style="height:46px;lineHeight:46px;titleWidth:120px">
+                     <deliveryList itemTitle='详细地址'style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
                             <input type="text" name="DetailedAddress" v-model="DetailedAddress" >
                     </deliveryList>  
                     <li class="item">
@@ -61,6 +61,7 @@ export default {
          console.log( this.$store.state);
         //修改body背景颜色
         document.querySelector('body').setAttribute('style','background-color：#F2F2F2')
+        document.querySelector('input').setAttribute('style','height：100%')
         console.log(this.is_default);
     },
     methods:{
@@ -101,7 +102,7 @@ export default {
                         input[type="text"]{
                             flex 1
                             outline none
-                            height 100%
+                            height 0.45rem
                         }
                         .ui-control{
                             transform translateX(210px)

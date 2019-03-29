@@ -42,16 +42,16 @@
                 </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
+                <router-link to="/helpCenter" href="#">
+                    <img src="../../assets/img/member-nav-help.png" alt="帮助中心">
+                    <p>帮助中心</p>
+                </router-link>
             </li>
             <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
+                <router-link to="/myComplaint" href="#">
+                    <img src="../../assets/img/complaint_suggest.png" alt="我要投诉">
+                    <p>我要投诉</p>
+                </router-link>
             </li>
             <li class="item">
                 <a href="#">
