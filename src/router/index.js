@@ -191,9 +191,10 @@ export default new Router({
       component:feedback,
     },
     {
-      path:'/myFeedback',
+      path:'/myFeedback/:selected',
       name:'myFeedback',
       component:myFeedback,
+      meta: { navShow: true}
     },
       
   ]

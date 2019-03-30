@@ -5,13 +5,13 @@
                 <p class="mintui mintui-back"></p>
             </div>
             <div class="content">
-                <router-link to="/memberOrder/merchantsOrder/1" href="#" >商家订单</router-link>
+                <router-link to="/memberOrder/merchantsOrder/1 " href="#" >商家订单</router-link>
                 <router-link to="/memberOrder/memberPointorder" href="#" >积分订单</router-link>
                 <router-link to="/memberOrder/memberRefund" href="#">退款订单</router-link>
             </div>
             <div class="right"></div>
         </div> 
-        <router-view class="order-active"></router-view>   
+        <router-view class="order-active" ></router-view>   
     </div>
 </template>
 <script>
@@ -31,6 +31,7 @@ export default {
     mounted(){
     //    console.log(this.$route.params.id);
     //    this.selected=this.$route.params.id
+  
     },
     methods:{
         goBack(){

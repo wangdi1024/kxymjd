@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <nav-bar title="我要投诉">
-            <a href="#" style="font-size:0.14rem">我的反馈</a>
+            <router-link :to="{name:'feedback',params:{selected:'2'}}" href="#" style="font-size:0.14rem">我的反馈</router-link>
         </nav-bar>
         
         <div class="mui-content content">
@@ -56,7 +56,7 @@ export default {
                     message: '反馈成功',
                     duration: 1000
                 });
-                this.$router.push('/feedback')
+                this.$router.push({name:'feedback',params:{selected:'1'}})
            }
        }
    }

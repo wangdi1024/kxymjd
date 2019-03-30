@@ -68,10 +68,7 @@ body{
   z-index: 999;
   box-shadow: 0 0 10px #9c9696;
 }
-.mint-tab-item{
-  padding: 6px 0px 0px 0px;
-  
-}
+
 .mint-tab-item a i{
   color: #666 !important;
 }
