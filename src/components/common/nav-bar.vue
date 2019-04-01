@@ -1,6 +1,6 @@
 <template>
 <!--像积分商城navbar的公共组件-->
-        <mt-header :title="title">
+    <mt-header :title="title">
         <div @click="back" slot="left">
             <mt-button icon="back"></mt-button>
         </div>

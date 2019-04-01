@@ -16,12 +16,14 @@
         </div>
         <div class="business">
             <ul>
-                <deliveryList itemTitle='商户门口照片' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <img src="../assets/img/home_logo.png" alt="" class="business-img">
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户门口照片' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <img src="../assets/img/home_logo.png" alt="" class="business-img">
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
                 <deliveryList itemTitle='商户营业执照' style="height:62px;lineHeight:62px">
                     <div class="item-pic">
                         <img src="../assets/img/home_logo.png" alt="" class="business-img">

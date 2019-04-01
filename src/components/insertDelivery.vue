@@ -91,7 +91,7 @@ export default {
                         input[type="text"]{
                             flex 1
                             outline none
-                            height 100%
+                            height 0.46rem;
                         }
                         .ui-control{
                             transform translateX(210px)

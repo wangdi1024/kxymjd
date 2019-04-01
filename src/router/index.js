@@ -51,6 +51,8 @@ import myComplaint from '../components/myComplaint.vue'
 import feedback from '../components/feedback.vue'
 //引入反馈详情页面
 import myFeedback from '../components/myFeedback.vue'
+// 引入商户认证页面
+import merchantRegister from '../components/merchantRegister'
 
 Vue.use(Router)
 
@@ -195,6 +197,11 @@ export default new Router({
       name:'myFeedback',
       component:myFeedback,
       meta: { navShow: true}
+    },
+    {
+      path:'/merchantRegister',
+      name:'merchantRegister',
+      component:merchantRegister,
     },
       
   ]

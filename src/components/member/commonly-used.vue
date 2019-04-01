@@ -2,7 +2,7 @@
 <!--常用功能-->
     <div class="margin-t">
         <div class="nav-title">
-            <a href="#" class="my-order">常用功能</a>
+            <a href="#" class="my-order" style="font-size:0.14rem;color:#232323">常用功能</a>
         </div>
         <ul class="order-nav">
             <li class="item">
@@ -55,26 +55,8 @@
             </li>
             <li class="item">
                 <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
-            </li>
-            <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
-            </li>
-            <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
-                </a>
-            </li>
-            <li class="item">
-                <a href="#">
-                    <img src="../../assets/img/order-state-return.png" alt="退款/售后">
-                    <p>退款/售后</p>
+                    <img src="../../assets/img/member-nav-logout.png" alt="退出">
+                    <p>退出</p>
                 </a>
             </li>
         </ul>
@@ -94,6 +76,7 @@ export default {
         .nav-title{
             height 46px;
             border-bottom 1px solid #ccc
+            padding 0px 10px;
             .my-order,{
                 width :68px;
                 height 100%;
@@ -107,7 +90,7 @@ export default {
             flex-wrap wrap;
             height 83px;
             .item{
-                flex 25%;
+                width 25%;
                 height 100%
                 a{
                     width 100%

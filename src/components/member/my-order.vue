@@ -1,7 +1,7 @@
 <template>
     <div class="margin-t">
         <div class="nav-title">
-            <a href="#" class="my-order">我的订单</a>
+            <a href="#" class="my-order" style="font-size:0.14rem;color:#232323">我的订单</a>
             <router-link to="/memberOrder/merchantsOrder/1" href="#" class="see-all">查看全部</router-link>
         </div>
         <div class="order-nav">
@@ -52,6 +52,7 @@ export default {
         .nav-title{
             height 46px;
             border-bottom 1px solid #ccc
+            padding 0px 10px;
             .my-order,.see-all{
                 width :68px;
                 height 100%;
