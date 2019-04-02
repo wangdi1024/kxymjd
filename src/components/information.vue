@@ -24,60 +24,78 @@
                         </div>
                     </deliveryList>
                 </router-link>
-                <deliveryList itemTitle='商户营业执照' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <img src="../assets/img/home_logo.png" alt="" class="business-img">
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='企业/商户名称' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-img">哈哈</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='统一社会信用代码' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                       <div class="business-img"></div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='法人' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户营业执照' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <img src="../assets/img/home_logo.png" alt="" class="business-img">
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='企业/商户名称' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-img">哈哈</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='统一社会信用代码' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
                         <div class="business-img"></div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='所在地' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-text">广东深圳宝安区沙井街道</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='商户经营类型' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-text">学校</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='商户经营范围' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-text">便利店</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='商户经营属性' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-text">夫妻店</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
-                <deliveryList itemTitle='商户经营面积' style="height:62px;lineHeight:62px">
-                    <div class="item-pic">
-                        <div class="business-text">50以下</div>
-                        <i class="fa fa-chevron-right go"></i>
-                    </div>
-                </deliveryList>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='法人' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-img"></div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='所在地' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-text">广东深圳宝安区沙井街道</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户经营类型' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-text">学校</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户经营范围' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-text">便利店</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户经营属性' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-text">夫妻店</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
+                <router-link to="/merchantRegister">
+                    <deliveryList itemTitle='商户经营面积' style="height:62px;lineHeight:62px">
+                        <div class="item-pic">
+                            <div class="business-text">50以下</div>
+                            <i class="fa fa-chevron-right go"></i>
+                        </div>
+                    </deliveryList>
+                </router-link>
             </ul>
         </div>
         <div class="user-info">

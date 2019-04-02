@@ -56,7 +56,6 @@ export default {
     height: 100%;
     position: relative;
     .mui-scroll{
-        // min-height: 101%;
     li{
         width:100%;
         height: 52px;

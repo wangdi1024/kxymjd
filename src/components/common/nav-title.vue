@@ -1,12 +1,12 @@
 <template>
 <!--首页及分类的头部，需要传递一个placeholder，是input的内容，还要两个具名slot-->
-    <div class="header" style="background:#F2F2F2">
+    <div class="header" :style="color">
             <!-- <img src="../../assets/img/home_logo.png" alt=""> -->
             <div class="img">
                 <slot name="img"></slot>
             </div>
             <div class="serach">
-                <input type="text" :placeholder="placeholder">
+                <input type="text" :placeholder="placeholder" :style="inputcolor">
                 <i class="fa fa-search"></i>
             </div>
             <div class="delect-text">
@@ -19,7 +19,7 @@
 <script>
 export default {
     name:'navTitle',
-    props:['placeholder'],
+    props:['placeholder','color','inputcolor'],
 }
 </script>
 <style scoped>
@@ -55,7 +55,7 @@ export default {
      height: 100%;
      width: 100%;
      border:none;
-     background-color: #fff;
+     /* background-color: #fff; */
      position: relative;
      font-size: 14px;
 }

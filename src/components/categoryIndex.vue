@@ -2,9 +2,9 @@
     <div class="box">
         <!-- 分类二级页面 -->
         <!-- 头部 -->
-        <navTitle placeholder='搜索商品'>
+        <navTitle placeholder='搜索商品' color="background-color:#f2f2f2">
         <i class="mint-toast-icon mintui mintui-back" slot="img" @click="goBack"></i>
-         <i class="fa fa-qrcode" slot="icon"></i> -->
+         <i class="fa fa-qrcode" slot="icon"></i>
         </navTitle>
         <!-- 内容 -->
         <div class="mui-content content">
@@ -292,7 +292,7 @@ export default {
                 //  console.log(111);
                 // console.log(this.$refs.sortCheck.style.overflowY);
                 this.$refs.sortCheck.style.overflowY='scroll'
-                this.$refs.sortCheck.style.height=height+'px'
+                this.$refs.sortCheck.style.height=540+'px'
             }else{
                 this.$refs.sortCheck.style.overflowY='hidden'
                 this.$refs.sortCheck.style.height=37+'px'

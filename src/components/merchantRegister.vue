@@ -9,11 +9,11 @@
                 <div class="form-item">
                     <div class="item-content">
                         <div class="business_license_div">
-                            <img id="business_license_img" :src="imgBase64" alt=""  class="business-img" ref="goodImg" style="display:block">
+                            <img id="business_license_img" :src="businessPhoto" alt=""  class="business-img" ref="businessImg" style="display:block">
                         </div>
                         <input type="text" class="type-file-text"  placeholder="营业执照" style="padding-left:0.15rem;font-size:0.15rem;width:1.8rem;" disabled="disabled">
                         <label for="business_license">
-                            <van-uploader :after-read="onRead" accept='image/jpeg,image/png' multiple>
+                            <van-uploader :after-read="business" accept='image/jpeg,image/png' multiple>
                                 <div class="business_license" style="display: inline-block;text-align:center ;cursor: pointer;width:1rem;height:0.26rem;font-size:0.14rem;line-height:0.26rem;background-color: rgb(233,233,233);border-radius: .5rem;">拍照上传</div>
                             </van-uploader>
                         </label> 
@@ -22,10 +22,10 @@
                 <div class="form-item">
                     <div class="item-content">
                         <div class="business_license_div">
-                           <img id="business_license_img" :src="imgBase64" alt=""  class="business-img" ref="goodImg" style="display:block">
+                           <img id="business_license_img" :src="shopPhoto" alt=""  class="business-img" ref="shopImg" style="display:block">
                         </div>
                           <input type="text" class="type-file-text"  placeholder="商户门口照片" style="padding-left:0.15rem;font-size:0.15rem;width:1.8rem" disabled="disabled">
-                          <van-uploader :after-read="onRead" accept='image/jpeg,image/png' multiple>
+                          <van-uploader :after-read="storePhoto " accept='image/jpeg,image/png' multiple>
                                 <div class="business_license" style="display: inline-block;text-align:center ;cursor: pointer;width:1rem;height:0.26rem;font-size:0.14rem;line-height:0.26rem;background-color: rgb(233,233,233);border-radius: .5rem;">拍照上传</div>
                           </van-uploader>
                     </div>
@@ -104,7 +104,7 @@
                 <div class="form-item">
                     <div class="item-content" @click="actionsheet">
                         <div class="item-inner input_div">
-                            <input id="member_name" type="text" class="item-control delect_buttom" name="member_name"  v-model="address">
+                            <input id="member_name" type="text" class="item-control delect_buttom" name="member_name"  v-model="address" disabled='disabled'>
                         </div>
                     </div>
                 </div>
@@ -149,8 +149,12 @@ export default {
     },
     data() {
         return {
+            // 判断显示申请的字段
             isShow:false,
-            imgBase64:'',
+            // 营业执照图片
+            businessPhoto:'',
+            // 商店图片
+            shopPhoto:'',
             show:false,
             // 需要选择的地址列表
             areaList:{
@@ -192,7 +196,10 @@ export default {
     methods:{
          onRead(file) {
              console.log(file.file);
-            this.$refs.goodImg.src=file.content
+           
+        },
+        business(file){
+            this.$refs.businessImg.src=file.content
             
             console.log(file.content);
              let canvas =  document.createElement('canvas')  
@@ -213,8 +220,34 @@ export default {
             // 将绘制完成的图片重新转化为base64编码，file.file.type为图片类型，0.92为默认压缩质量
             file.content = canvas.toDataURL(file.file.type, 0.92) 
             // 最后将base64编码的图片保存到数组中，留待上传。
-            this.imgBase64=file.content
-            console.log(this.imgBase64);
+            this.businessPhoto=file.content
+           
+            }
+        },
+        storePhoto(file){
+            this.$refs.shopImg.src=file.content
+            
+            console.log(file.content);
+             let canvas =  document.createElement('canvas')  
+            // 获取对应的CanvasRenderingContext2D对象(画笔)
+            let context = canvas.getContext('2d') 
+            // 创建新的图片对象 
+            let img = new Image()
+            // 指定图片的DataURL(图片的base64编码数据)
+            img.src =  file.content
+             // 监听浏览器加载图片完成，然后进行进行绘制
+        img.onload = () => {
+            // 指定canvas画布大小，该大小为最后生成图片的大小
+            canvas.width = 300
+            canvas.height = 400
+            /* drawImage画布绘制的方法。(0,0)表示以Canvas画布左上角为起点，400，300是将图片按给定的像素进行缩小。
+            如果不指定缩小的像素图片将以图片原始大小进行绘制，图片像素如果大于画布将会从左上角开始按画布大小部分绘制图片，最后的图片就是张局部图。*/ 
+            context.drawImage(img, 0, 0, 300, 400)
+            // 将绘制完成的图片重新转化为base64编码，file.file.type为图片类型，0.92为默认压缩质量
+            file.content = canvas.toDataURL(file.file.type, 0.92) 
+            // 最后将base64编码的图片保存到数组中，留待上传。
+            this.shopPhoto=file.content
+            
             }
         },
         //点击地址选择时弹出
@@ -247,6 +280,7 @@ export default {
             }, 1000);
             console.log(this.delText);
         },
+
         // 点击xx图标清除文字
         clearWords(i){
             // console.log(i);

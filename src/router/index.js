@@ -53,6 +53,8 @@ import feedback from '../components/feedback.vue'
 import myFeedback from '../components/myFeedback.vue'
 // 引入商户认证页面
 import merchantRegister from '../components/merchantRegister'
+// 引入商铺页面
+import showStore from '../components/showStore'
 
 Vue.use(Router)
 
@@ -202,6 +204,11 @@ export default new Router({
       path:'/merchantRegister',
       name:'merchantRegister',
       component:merchantRegister,
+    },
+    {
+      path:'/showStore',
+      name:'showStore',
+      component:showStore,
     },
       
   ]

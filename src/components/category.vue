@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav-title placeholder='请输入你要搜索的内容'>
+        <nav-title placeholder='请输入你要搜索的内容' color="background-color:#f2f2f2">
             <img src="../assets/img/home_logo.png" alt="" slot="img">
             <i class="fa fa-comment-o" slot="icon"></i>
             <i class="fa fa-qrcode" slot="icon"></i>
