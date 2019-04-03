@@ -15,8 +15,9 @@
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
-                        <span class="score-num" style="color:#fc9109">5.0</span>
+                        
                     </span>
+                    <span class="score-num" style="color:#fc9109">5.0</span>
                 </p>
                 <p class="store-servicecredit">&nbsp;&nbsp;运输&nbsp;&nbsp;
                     <span>
@@ -25,9 +26,14 @@
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
                         <img src="../../assets/img/icon-star-yes.png" alt="">&nbsp;
-                        <span class="score-num" style="color:#fc9109">5.0</span>
+                        
                     </span>
+                    <span class="score-num" style="color:#fc9109;">5.0</span>
                 </p>
+            </div>
+            <div class="satisfaction">
+                <p class="store_deliverycredit">100%</p>
+				<p class="deliverycredit-title">配送满意度</p>
             </div>
         </div>
     </div>
@@ -39,8 +45,10 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .evaluate{
+    height 6rem
+    background: #fff;
+    overflow auto;
     .evaluate-container{
-        background: #fff;
         text-align: center;
         margin-bottom: .1rem;
         .store-evaluate{
@@ -71,11 +79,24 @@ export default {
                 width 100%
                 height 26px;
                 span{
+                    line-height 14px;
                     img{
                         width 14px;
                         height 14px;
                     }
                 }
+            }
+        }
+        .satisfaction{
+            width 86px
+            height 86px
+            float left
+            p.store_deliverycredit{
+                height 50px;
+                width 100%
+                font-size 0.25rem
+                color: #aaa
+                line-height 0.5rem
             }
         }
     }

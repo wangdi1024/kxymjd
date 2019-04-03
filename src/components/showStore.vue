@@ -43,7 +43,7 @@
                     <van-tabs v-model="active" swipeable>
                         <van-tab title="商品" style="position:relative">
                             <div class="sort" @click="sort" style="color:red">排序<i :class="isSort==true?'fa-sort-up':'fa-sort-desc'" class="fa" style="margin-left:5px;"></i></div>
-                             <div class="com-top" ref="comtop" style="overflow:hidden">
+                             <div class="com-top" ref="comtop" style="overflow:hidden;height:0">
                                 <ul class="mui-row" >
                                     <li class="mui-col-xs-3">
                                         <a href="javascript:;" @click="choiceStatus(1)" :class="{'active':index==1}">综合</a>
@@ -65,7 +65,7 @@
                             <evaluate></evaluate>
                         </van-tab>
                         <van-tab title="商家">
-                            {{active}}
+                            <merchants></merchants>
                         </van-tab>
                     </van-tabs>
                 </div>
@@ -74,10 +74,17 @@
     </div>
 </template>
 <script>
+// 引入头部组件
 import navTitle from './common/nav-title'
+// 引入商品栏
 import goods from './showStore/goods'
+// 引入评价栏
 import evaluate from './showStore/evaluate'
+// 引入商家栏
+import merchants from './showStore/merchants'
+// 引入轮播图组件
 import { Swipe, SwipeItem } from 'mint-ui';
+// 引入tab栏组件
 import { Tab, Tabs } from 'vant';
 export default {
     name:'showStore',
@@ -85,6 +92,7 @@ export default {
         navTitle,
         goods,
         evaluate,
+        merchants
     },
     data() {
         return {
@@ -188,10 +196,11 @@ export default {
                 .com-top {
                     background-color #fff
                     position: relative;
-                     transition: height 0.5s;
+                    transition height .3s
                     ul{
                         width 100%
                         height 36px;
+                        transition: height 0.5s;
                         li{
                             height 100%
                             a{
