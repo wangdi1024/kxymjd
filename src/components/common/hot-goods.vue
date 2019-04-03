@@ -1,15 +1,18 @@
 <template>
 <!--热门商品加入购物车的组件-->
     <ul class="hot-stores-list">
-        <li v-for=" item in hotGoods" :key="item.id">
+        <li>
             <a href="#">
                 <div class="img-show">
-                    <img :src="item.img" alt="">
+                    <!-- <img :src="item.img" alt=""> -->
+                    <slot name="img"></slot>
                 </div>
             </a>
             <div class="describe-content">
                 <i class="icon-goods-act"></i>
-                <a href="#" class="shopName">{{item.name}}</a>
+                <!-- <a href="#" class="shopName" slot=""></a> -->
+                <slot name="span"></slot>
+                <slot name="shopName"></slot>
                 <div class="detail">
                     <!-- <p>条码 : {{item.tiaoma}}</p>
                     <p>成立时间 : {{item.banrd}}</p>
@@ -82,6 +85,12 @@ export default {
         /* text-align: center; */
         line-height: 16px;
         padding: 3px;
+    }
+    .describe-content a span{
+        background-color: #ff3b3c;
+        padding-left: .04rem;
+        padding-right: .04rem;
+        color: white;
     }
     .describe-content a.shopName{
         display: block;

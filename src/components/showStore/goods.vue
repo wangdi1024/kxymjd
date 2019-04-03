@@ -2,7 +2,7 @@
     <div class="goods">
          <!-- 品牌选择 -->
         <div class="sort-warp-new">
-            <div class="sort-check" ref="sortCheck" style="height: 37px; overflow-y: hidden;">
+            <div class="sort-check" ref="sortCheck" style="height: 0.37rem; overflow-y: hidden;">
                 <span class="brand_more" @click="brandMore">更多<i class="fa fa-sort-amount-desc"></i></span>
                 <ul>
                     <li ref="sortUl">
@@ -18,6 +18,8 @@
                 <div class="mui-scroll-wrapper">
 	                <div class="mui-scroll">
                         <hotGoods :hotGoods='hotGoods'  v-for="(item ,index) in hotGoods" :key='index' bgcolor='#ff273b'>
+                            <img :src="item.img" alt="" slot="img">
+                            <a href="#" class="shopName" slot="shopName">{{item.name}}</a>
                             <p>条码 : {{item.id}}</p>
                             <p>{{item.store_name}}}</p>
                             <p><del>原价 :{{item.goods_price}}</del></p>
@@ -129,7 +131,10 @@ export default {
             ],
             height:'',
             leftList:[
-                {title:'一次性餐桌用品',isActive:true},
+                {title:'一次性餐桌用品',isActive:true,class2:[
+                    {title:'一次性餐桌用品'},
+                    {title:'烧烤/烘焙用具'},
+                ]},
                 {title:'烧烤/烘焙用具',isActive:false},
                 {title:'杯子/水杯/水壶',isActive:false},
                 {title:'厨用小工具/厨房储物',isActive:false},
@@ -188,13 +193,13 @@ export default {
                 // console.log(this.$refs.sortCheck.style.overflowY);
                     this.height= this.$refs.sortUl.offsetHeight
                    
-                    this.$refs.sortCheck.style.overflowY='scroll'
-                    this.$refs.sortCheck.style.height=82+'px'
+                    // this.$refs.sortCheck.style.overflowY='auto'
+                    this.$refs.sortCheck.style.height=0.82+'rem'
                     //   alert( this.$refs.sortCheck.style.height);
                     
                 }else{
                     this.$refs.sortCheck.style.overflowY='hidden'
-                    this.$refs.sortCheck.style.height=37+'px'
+                    this.$refs.sortCheck.style.height=0.37+'rem'
                     // alert(this.$refs.sortCheck.style.height);
                 }
             })
@@ -244,7 +249,7 @@ export default {
     .mod-goods-list{
         display: flex;
         display: -webkit-flex;
-        height: 340px;
+        height: 460px;
         width: 100%;
         position relative
         z-index 1

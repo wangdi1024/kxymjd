@@ -18,16 +18,16 @@
                         <a href="javascript:;"  @click="choiceStatus(2)" :class="{'active':index==2}">最新</a>
                     </li>
                     <li class="mui-col-xs-3" >
-                        <a href="javascript:;"  @click="choiceStatus(3)" :class="{'active':index==3}">热销度<i class="fa fa-sort" style="margin-left:3px"></i></a>
+                        <a href="javascript:;"  @click="choiceStatus(3)" :class="{'active':index==3}">热销度<i class="fa fa-sort" style="margin-left:0.15rem"></i></a>
                     </li>
                     <li class="mui-col-xs-3" >
-                        <a href="javascript:;"  @click="choiceStatus(4)" :class="{'active':index==4}">价格<i class="fa fa-sort" style="margin-left:3px"></i></a>
+                        <a href="javascript:;"  @click="choiceStatus(4)" :class="{'active':index==4}">价格<i class="fa fa-sort" style="margin-left:0.15rem"></i></a>
                     </li>
                 </ul>
             </div>
             <!-- 品牌选择 -->
             <div class="sort-warp-new">
-                <div class="sort-check" ref="sortCheck" style="height: 37px; overflow-y: hidden;">
+                <div class="sort-check" ref="sortCheck" style="height: 0.37rem; overflow-y: hidden;">
                     <span class="brand_more" @click="brandMore">更多<i class="fa fa-sort-amount-desc"></i></span>
                     <ul>
                         <li ref="sortUl">
@@ -43,7 +43,17 @@
                 <div class="rightList">
                     <div class="mui-scroll-wrapper">
 	                    <div class="mui-scroll">
-                            <hotGoods :hotGoods='rightList'></hotGoods>
+                             <hotGoods :hotGoods='hotGoods'  v-for="(item ,index) in hotGoods" :key='index' bgcolor='#ff273b'>
+                                <img :src="item.img" alt="" slot="img">
+                                
+                                <a href="#" class="shopName" slot="shopName"><span slot="span">特价</span>{{item.name}}</a>
+                                <p>条码 : {{item.id}}</p>
+                                <p>{{item.store_name}}</p>
+                                <p><del>原价 :{{item.goods_price}}</del></p>
+                                <p style="color:#ff273b;font-weight:700">
+                                    <span class="text-price1" style="font-size:0.16rem">¥{{item.goods_activity_price}}</span><span class="text-price2">/包<span> ¥{{item.goods_price}}/箱</span></span>
+                                </p>
+                            </hotGoods>
                         </div>
                     </div>
                 </div>  
@@ -155,27 +165,30 @@ export default {
             isShow:false,
             //左侧分类数据
             leftList:[
-                {title:'一次性餐桌用品',isActive:true},
-                {title:'烧烤/烘焙用具',isActive:false},
-                {title:'杯子/水杯/水壶',isActive:false},
-                {title:'厨用小工具/厨房储物',isActive:false},
-                {title:'家用五金工具',isActive:false},
-                {title:'卫生巾/护垫/成人尿裤',isActive:false},
-                {title:'一次性餐桌用品',isActive:false},
-                {title:'烧烤/烘焙用具',isActive:false},
-                {title:'杯子/水杯/水壶',isActive:false},
-                {title:'厨用小工具/厨房储物',isActive:false},
-                {title:'家用五金工具',isActive:false},
-                {title:'卫生巾/护垫/成人尿裤',isActive:false},
-                {title:'一次性餐桌用品',isActive:false},
-                {title:'烧烤/烘焙用具',isActive:false},
-                {title:'杯子/水杯/水壶',isActive:false},
-                {title:'厨用小工具/厨房储物',isActive:false},
-                {title:'家用五金工具',isActive:false},
-                {title:'卫生巾/护垫/成人尿裤',isActive:false},
-                {title:'厨用小工具/厨房储物',isActive:false},
-                {title:'家用五金工具',isActive:false},
-                {title:'卫生巾/护垫/成人尿裤',isActive:false},
+                {title:'一次性餐桌用品',isActive:true,isShow:true,class2:[
+                    {title:'一次性餐桌用品'},
+                    {title:'烧烤/烘焙用具'},
+                ]},
+                {title:'烧烤/烘焙用具',isActive:false,isShow:false},
+                {title:'杯子/水杯/水壶',isActive:false,isShow:false},
+                {title:'厨用小工具/厨房储物',isActive:false,isShow:false},
+                {title:'家用五金工具',isActive:false,isShow:false},
+                {title:'卫生巾/护垫/成人尿裤',isActive:false,isShow:false},
+                {title:'一次性餐桌用品',isActive:false,isShow:false},
+                {title:'烧烤/烘焙用具',isActive:false,isShow:false},
+                {title:'杯子/水杯/水壶',isActive:false,isShow:false},
+                {title:'厨用小工具/厨房储物',isActive:false,isShow:false},
+                {title:'家用五金工具',isActive:false,isShow:false},
+                {title:'卫生巾/护垫/成人尿裤',isActive:false,isShow:false},
+                {title:'一次性餐桌用品',isActive:false,isShow:false},
+                {title:'烧烤/烘焙用具',isActive:false,isShow:false},
+                {title:'杯子/水杯/水壶',isActive:false,isShow:false},
+                {title:'厨用小工具/厨房储物',isActive:false,isShow:false},
+                {title:'家用五金工具',isActive:false,isShow:false},
+                {title:'卫生巾/护垫/成人尿裤',isActive:false,isShow:false},
+                {title:'厨用小工具/厨房储物',isActive:false,isShow:false},
+                {title:'家用五金工具',isActive:false,isShow:false},
+                {title:'卫生巾/护垫/成人尿裤',isActive:false,isShow:false},
             ],
             rightList:[
                  {
@@ -269,6 +282,28 @@ export default {
                     sale:"¥333",
                 },
             ],
+             hotGoods:[
+                {
+                id:1,
+                img:require('../assets/img/hot-shop.jpg'),
+                name:"深圳市礼尚汇贸易有限公司",
+                banrd:'百草味  三只松鼠',
+                goods_barcode:6923308815678,
+                goods_activity_price:300,
+                store_name:'商家 : 深圳市广昌盛贸易有限公司',
+                 goods_price:300,
+                },
+                {
+                id:2,
+                img:require('../assets/img/hot-shop.jpg'),
+                name:"深圳市礼尚汇贸易有限公司",
+                banrd:'百草味  三只松鼠',
+                goods_barcode:6923308815678,
+                goods_activity_price:300,
+                store_name:'商家 : 深圳市广昌盛贸易有限公司',
+                 goods_price:300,
+                },
+            ],
         }
     },
     mounted(){
@@ -292,10 +327,10 @@ export default {
                 //  console.log(111);
                 // console.log(this.$refs.sortCheck.style.overflowY);
                 this.$refs.sortCheck.style.overflowY='scroll'
-                this.$refs.sortCheck.style.height=540+'px'
+                this.$refs.sortCheck.style.height=5.4+'rem'
             }else{
                 this.$refs.sortCheck.style.overflowY='hidden'
-                this.$refs.sortCheck.style.height=37+'px'
+                this.$refs.sortCheck.style.height=0.37+'rem'
             }
         }
     },

@@ -174,9 +174,11 @@
                                     <p>起  售  额 :{{item.count}}</p>
                                 </div>
                                 <a href="#" class="favourable">{{item.sale}}</a>
-                                <div class="enterShop">
-                                    <a href="#">进入店铺 ></a>
-                                </div>
+                                <router-link to="/showStore">
+                                    <div class="enterShop">
+                                        <a href="#">进入店铺 ></a>
+                                    </div>
+                                </router-link>
                                 <div class="heart">
                                     <i class="fa" :class="item.heart==true?'fa-heart':'fa-heart-o'" @click="shoreUp(item.heart,index)"></i>
                                     <!-- <i class="fa fa-heart" v-if="item.heart==true" @click="shoreUp(item.heart,index)"></i>
@@ -297,8 +299,10 @@
             </div>
             <div class="shop_template">
                 <hotGoods :hotGoods='hotGoods' v-for="(item ,index) in hotGoods" :key='index' bgcolor='#ff273b'>
+                    <img :src="item.img" alt="" slot="img">
+                    <a href="#" class="shopName" slot="shopName">{{item.name}}</a>
                     <p>条码 : {{item.goods_barcode}}</p>
-                    <p>{{item.store_name}}}</p>
+                    <p>{{item.store_name}}</p>
                     <p><del>原价 :{{item.goods_price}}</del></p>
                     <p style="color:#ff273b;font-weight:700">
                         <span class="text-price1" style="font-size:0.16rem">¥{{item.goods_activity_price}}</span><span class="text-price2">/包<span> ¥{{item.goods_price}}/箱</span></span>
@@ -851,10 +855,10 @@ export default {
     text-align: center;
     border: 1px solid #f2f2f2;
 }
-    .shop_template .img-show img{
+.shop_template .img-show img{
         margin: 10px auto;
-        max-width: 9px;
-        max-height:9px;
+        max-width: 0.67rem;
+        max-height:0.67rem;
     }
 .mod-hot-goods{
     background-color: #fff;

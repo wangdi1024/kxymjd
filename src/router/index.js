@@ -55,6 +55,7 @@ import myFeedback from '../components/myFeedback.vue'
 import merchantRegister from '../components/merchantRegister'
 // 引入商铺页面
 import showStore from '../components/showStore'
+import test from '../components/test'
 
 Vue.use(Router)
 
@@ -209,6 +210,11 @@ export default new Router({
       path:'/showStore',
       name:'showStore',
       component:showStore,
+    },
+    {
+      path:'/test',
+      name:'test',
+      component:test,
     },
       
   ]
