@@ -56,6 +56,9 @@ import merchantRegister from '../components/merchantRegister'
 // 引入商铺页面
 import showStore from '../components/showStore'
 import test from '../components/test'
+// 引入商品页面
+import productDetail from '../components/productDetail'
+import product from '../components/product'
 
 Vue.use(Router)
 
@@ -216,6 +219,22 @@ export default new Router({
       name:'test',
       component:test,
     },
-      
+    {
+      path:'/productDetail',
+      name:'productDetail',
+      component:productDetail,
+      children:[
+        {
+          path:'/',
+          redirect: 'product'
+        },
+        {
+          path:'product',
+          name:'product',
+          component:product,
+        },
+      ],
+      linkActiveClass:'productActive'
+    }, 
   ]
 })

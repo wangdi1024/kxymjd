@@ -164,7 +164,7 @@ export default {
                         p{
                             font-size:.1rem;
                             color:#666
-                            margin-top 5px;
+                            margin-top 3px;
                         }
                     }
                     .tag{

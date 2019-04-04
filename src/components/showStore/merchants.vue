@@ -17,7 +17,7 @@
             </div>
             <!-- 联系商家 -->
             <div class="sms-talk">
-                <div class="title bottom-line">
+                <div class="talk-title bottom-line">
                     <span>&nbsp;咨询商家</span>
 		        </div>
                 <!-- 显示聊天区域 -->
@@ -25,15 +25,15 @@
                     <div class="chat-warp" style="background:#fcfcfc"></div>
                     <!-- 底部聊天框 -->
                     <form onsubmit="return false" onkeydown="if(event.keyCode==13) return send_msg();" id="form1" class="m-send"    enctype="multipart/form-data" method="post">
-                    <div class="text">
-                        <input type="text" id="send" name="content" placeholder="请输入咨询内容" v-model="inputText" @keyup='theInput'>
-                        <div class="talk-send clearfix" :class="isKeyup?'active':' '">
-                            <i class="icon icon-talk-img">
-                                <input type="file" name="files[]" id="talk-img">
-                            </i>
-                            <i class="icon icon-send" id="send-msg"></i>
+                        <div class="text-box">
+                            <input type="text" id="send" name="content" placeholder="请输入咨询内容" v-model="inputText" @keyup='theInput'>
+                            <div class="talk-send clearfix" :class="isKeyup?'active':' '">
+                                <i class="icon icon-talk-img">
+                                    <input type="file" name="files[]" id="talk-img">
+                                </i>
+                                <i class="icon icon-send" id="send-msg" ref="sendMsg" :class="isKeyup?'active':' '"></i>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -51,10 +51,14 @@ export default {
     },
     methods:{
         theInput(){
+             var sendMsg=this.$refs.sendMsg
             if(this.inputText!==''){
                 this.isKeyup=true
+                sendMsg.style.opacity=1
+               
             }else{
                 this.isKeyup=false
+                 sendMsg.style.opacity=0
             }
         },
     }
@@ -63,6 +67,7 @@ export default {
 <style lang="stylus" scoped>
 .merchants{
     background-color #fff
+    height 6rem
     .merchants-container{
         .store-info{
             .store-name{
@@ -97,20 +102,22 @@ export default {
             margin-top: .1rem;
             overflow-x: hidden;
             overflow-y: auto;
-            .talk{
-                .title{
+            .talk-title{
                     font-size: .15rem;
-                    color: #333;
+                    color: red;
                     margin: 0;
                     line-height 50px
                     height 50px;
                     width 100%
                 }
+            .talk{
                 .chat-warp{
                     padding: .05rem .05rem;
                     min-height: 1rem;
+                    background-color red
+                    margin-bottom 20px;
                 }
-                .text{
+                .text-box{
                     display flex
                     #send{
                         flex :1
@@ -139,7 +146,7 @@ export default {
                             background url('../../assets/img/icon-setImg.png')
                             position: absolute;
                             top: 50%;
-                            transform: translateY(-50%) rotate(360deg);
+                            -webkit-transform: translate(0%, -50%) rotate(0);
                             background-size: contain;
                             width: .3rem;
                             height: .3rem;
@@ -155,16 +162,18 @@ export default {
                             position: absolute;
                             top: 50%;
                             transform: translateY(-55%);
-                            left: 10px;
-                            margin-left: .1rem;
-                            background-color red
-                            // opacity: 0;
+                            left: 8px;
+                            // margin-left: .1rem;
+                            opacity: 0;
                             width: .3rem;
                             height: .3rem;
-                            -webkit-transform: translate(150%, -50%) rotate(180deg);
-                            transform: translate(150%, -50%) rotate(180deg);
+                            transform: translate(140%, -50%) rotate(0);
                             transition: all .5s ease-in-out;
                             -webkit-transition: all .5s ease-in-out;
+                        }
+                        .icon-send.active{
+                            transform:translate(130%, -50%) rotate(-360deg);;
+                            transition: all .5s;
                         }
                     }
                 }
