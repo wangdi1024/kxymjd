@@ -6,16 +6,16 @@
             <form method="post" name="member-address">
                 <ul>
                     <deliveryList itemTitle='收货人姓名' style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
-                            <input type="text" name="true_name" v-model="name" value="name">
+                            <input type="text" name="true_name" v-model="name" value="name" id="input">
                     </deliveryList>
                     <deliveryList itemTitle='手机号码' style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
-                            <input type="text" name="iPhone" v-model="iPhone" >
+                            <input type="text" name="iPhone" v-model="iPhone" id="input">
                     </deliveryList>
                     <deliveryList itemTitle='所在区域' style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
-                            <input type="text" name="address" v-model="address" >
+                            <input type="text" name="address" v-model="address" id="input">
                     </deliveryList>  
                     <deliveryList itemTitle='详细地址' style="height:0.46rem;lineHeight:0.46rem;titleWidth:1.2rem">
-                            <input type="text" name="DetailedAddress" v-model="DetailedAddress">
+                            <input type="text" name="DetailedAddress" v-model="DetailedAddress" id="input">
                     </deliveryList>
                     <li class="item">
                         <div class="item-content">
@@ -88,10 +88,10 @@ export default {
                         .item-title{
                             width 120px;
                         }
-                        input[type="text"]{
+                        #input{
                             flex 1
                             outline none
-                            height 0.46rem;
+                            height 0.45rem !important;
                         }
                         .ui-control{
                             transform translateX(210px)

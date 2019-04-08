@@ -13,22 +13,23 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .box{
-        .tips-warp{
-            z-index 999
-            height 140px;
-            width 100px;
-            // position absolute
-            transform translateX(148%)
-            margin-top 140px;
-            img {
-                width 100%;
-                height 100px;
-            }
-            p{
-                margin-top 20px;
-                font-size 16px;
-            }
+    // background-color:#f8f8f8;
+    .tips-warp{
+        z-index 999
+        height 140px;
+        width 100px;
+        // position absolute
+        transform translateX(148%)
+        margin-top 100px;
+        img {
+            width 100%;
+            height 100px;
         }
+        p{
+            margin-top 20px;
+            font-size 16px;
+        }
+    }
 }
 </style>
 

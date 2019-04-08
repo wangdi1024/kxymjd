@@ -3,8 +3,8 @@
         <!-- 头部 -->
         <nav-title placeholder='请输入你要搜索的内容' color="background-color:#f2f2f2">
              <img src="../assets/img/home_logo.png" alt="" slot="img">
-              <i class="fa fa-comment-o" slot="icon"></i>
-                <i class="fa fa-qrcode" slot="icon"></i>
+              <i class="iconfont icon-lingdang" slot="icon"></i>
+              <i class="iconfont icon-tubiaozhizuomoban" slot="icon"></i>
         </nav-title>
         <!-- 轮播 -->
         <div class="swiper">
@@ -74,50 +74,62 @@
                 <ul class="clearfix">
                     <li>
                         <a href="javascript:;" onclick="show_class(1238)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-food.png" alt="零食酒水">
-                            <span>零食酒水</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1370.jpg" alt="奶品水饮">
+                            <span>奶品水饮</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1263)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-oil.png" alt="粮油副食">
-                            <span>粮油副食</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1368.jpg" alt="休闲食品">
+                            <span>休闲食品</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1066)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-tissue.png" alt="个人护理">
-                            <span>个人护理</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1369.jpg" alt="中外名酒">
+                            <span>中外名酒</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1065)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-wash.png" alt="居家日用">
-                            <span>居家日用</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1238.jpg" alt="粮油副食">
+                            <span>粮油副食</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1209)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-baby.png" alt="母婴儿童">
-                            <span>母婴儿童</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1065.jpg" alt="家庭清洁">
+                            <span>家庭清洁</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1156)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-tool.png" alt="厨房用具">
-                            <span>厨房用具</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1066.jpg" alt="个人护理">
+                            <span>个人护理</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1143)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-sweep.png" alt="清洁工具">
-                            <span>清洁工具</span>
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1235.jpg" alt="家居家纺">
+                            <span>家居家纺</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" onclick="show_class(1235)">
-                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-towel.png" alt="家具家纺">
-                            <span>家具家纺</span>
+                            <img src="http://www.kuaixiaoapp.com/wap/resource/img/sore-brand-towel.png" alt="厨房卫浴">
+                            <span>厨房卫浴</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="show_class(1235)">
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1156.jpg" alt="母婴用品">
+                            <span>母婴用品</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="show_class(1235)">
+                            <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1367.jpg" alt="办公用品">
+                            <span>办公用品</span>
                         </a>
                     </li>
                 </ul>
@@ -577,24 +589,25 @@ export default {
     }
     .sore-brand .container ul li {
     float: left;
-    width: 25%;
+    width: 20%;
     text-align: center;
-    height: 114px;
+    height: 96px;
     }
     .sore-brand .container ul li a {
     width: 100%;
     height: 100%;
     display: block;
-    font-size: 16px;
+    font-size: 13px;
+    padding: 10px 0px;
     }
     .sore-brand .container ul li a span {
     color: #666;
     font-size: 12px;
     }
     .sore-brand .container ul li a img {
-    width: 67px;
+    width: 50px;
     display: block;
-    margin: 0 auto 5px;
+    margin: 0 auto .05rem;;
     border-radius: 50%;
     }
     .sore-brand .container ul li a {

@@ -2,8 +2,8 @@
     <div>
         <nav-title placeholder='请输入你要搜索的内容' color="background-color:#f2f2f2">
             <img src="../assets/img/home_logo.png" alt="" slot="img">
-            <i class="fa fa-comment-o" slot="icon"></i>
-            <i class="fa fa-qrcode" slot="icon"></i>
+             <i class="iconfont icon-lingdang" slot="icon"></i>
+             <i class="iconfont icon-tubiaozhizuomoban" slot="icon"></i>
         </nav-title>
         <div class="main clearfix mui-content">
             <left-list :list='list'></left-list>
@@ -124,6 +124,7 @@ body {
      margin-top: 0.5rem;
      height: 560px;
      width: 100%;
+     position: fixed;
 }
 .mui-content{
     height: calc(85vh)

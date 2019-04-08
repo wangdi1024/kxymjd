@@ -56,9 +56,14 @@ import merchantRegister from '../components/merchantRegister'
 // 引入商铺页面
 import showStore from '../components/showStore'
 import test from '../components/test'
-// 引入商品页面
+// 引入商品详情页面
 import productDetail from '../components/productDetail'
+// 引入商品详情的子路由商品页面
 import product from '../components/product'
+// 引入商品详情的子路由详情页面
+import goodsDetail from '../components/goodsDetail'
+// 引入商品详情的子路由评价页面
+import evaluate from '../components/evaluate'
 
 Vue.use(Router)
 
@@ -232,6 +237,16 @@ export default new Router({
           path:'product',
           name:'product',
           component:product,
+        },
+        {
+          path:'goodsDetail',
+          name:'goodsDetail',
+          component:goodsDetail,
+        },
+        {
+          path:'evaluate',
+          name:'evaluate',
+          component:evaluate,
         },
       ],
       linkActiveClass:'productActive'

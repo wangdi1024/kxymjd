@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 //导入vuex
 import store from './store/index'
+// 引入jq
 import $ from 'jquery'
 Vue.prototype.$ = $
 import '../test/unit/rem'
@@ -21,7 +22,9 @@ Vue.use(Vant);
 //引入字体图标
 import './assets/iconfont/css/font-awesome.css'
 // import vueTouch from 'kim-vue-touch'
+// Vue.use(vueTouch)// import vueTouch from 'kim-vue-touch'
 // Vue.use(vueTouch)
+import './assets/aliFonts/iconfont.css'
 Vue.config.productionTip = false
 //引入公共样式
 import '../static/css/base.css'

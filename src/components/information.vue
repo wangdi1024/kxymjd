@@ -11,7 +11,7 @@
                 <van-uploader :after-read="onRead" accept='image/jpeg,image/png' multiple>
                     <img :src="imgBase64" alt=""  class="business-img" ref="goodImg">
                 </van-uploader>
-                <i class="fa fa-chevron-right"></i>
+                <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
             </div>
         </div>
         <div class="business">
@@ -20,7 +20,7 @@
                     <deliveryList itemTitle='商户门口照片' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <img src="../assets/img/home_logo.png" alt="" class="business-img">
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -28,7 +28,7 @@
                     <deliveryList itemTitle='商户营业执照' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <img src="../assets/img/home_logo.png" alt="" class="business-img">
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -36,7 +36,7 @@
                     <deliveryList itemTitle='企业/商户名称' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-img">哈哈</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -44,7 +44,7 @@
                     <deliveryList itemTitle='统一社会信用代码' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                         <div class="business-img"></div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -52,7 +52,7 @@
                     <deliveryList itemTitle='法人' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-img"></div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -60,7 +60,7 @@
                     <deliveryList itemTitle='所在地' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-text">广东深圳宝安区沙井街道</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -68,7 +68,7 @@
                     <deliveryList itemTitle='商户经营类型' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-text">学校</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -76,7 +76,7 @@
                     <deliveryList itemTitle='商户经营范围' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-text">便利店</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -84,7 +84,7 @@
                     <deliveryList itemTitle='商户经营属性' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-text">夫妻店</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -92,7 +92,7 @@
                     <deliveryList itemTitle='商户经营面积' style="height:62px;lineHeight:62px">
                         <div class="item-pic">
                             <div class="business-text">50以下</div>
-                            <i class="fa fa-chevron-right go"></i>
+                            <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                         </div>
                     </deliveryList>
                 </router-link>
@@ -103,49 +103,49 @@
                 <deliveryList itemTitle='手机号' style="height:62px;lineHeight:62px">
                     <div class="item-pic">
                         <div class="business-text">1383838338</div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='性别' style="height:62px;lineHeight:62px">
                     <div class="item-pic"  @click="actionSheet">
                         <div class="business-text">{{gender}}</div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='地址管理' style="height:62px;lineHeight:62px">
                     <router-link to="/delivery" class="item-pic">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </router-link>
                 </deliveryList>
                 <deliveryList itemTitle='发票信息管理' style="height:62px;lineHeight:62px">
                     <div class="item-pic">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='密码管理' style="height:62px;lineHeight:62px">
                     <div class="item-pic">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='帐号绑定' style="height:62px;lineHeight:62px">
                     <div class="item-pic">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='注销账户（销户）' style="height:62px;lineHeight:62px" >
                     <div class="item-pic"  @click="loginOut">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </div>
                 </deliveryList>
                 <deliveryList itemTitle='关于快销易' style="height:62px;lineHeight:62px">
                     <router-link to="/aboutUs" class="item-pic">
                         <div class="business-text"></div>
-                        <i class="fa fa-chevron-right go"></i>
+                        <i class="iconfont icon-tubiao_jiyao-xiangyou"></i>
                     </router-link>
                 </deliveryList>
             </ul>
@@ -294,7 +294,6 @@ export default {
                         font-size :18px;
                         color #8f8f94
                         position absolute;
-                        top:23px;
                         left 56px;
                     }
                 }
@@ -311,19 +310,12 @@ export default {
             flex 1
             position relative
             text-align right ;
-            i.go{
-                font-size :18px;
-                color #8f8f94
-                position absolute
-                top:23px;
-                right:2px;
-                font-weight 400
-            }
+            color #8f8f94
         }
          .business-img {
             width 47px;
             height 47px;
-            margin-right 23px;
+            // margin-right 23px;
             display inline-block
             }
         .business-text{

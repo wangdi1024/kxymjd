@@ -7,7 +7,7 @@
             </div>
             <div class="serach">
                 <input type="text" :placeholder="placeholder" :style="inputcolor">
-                <i class="fa fa-search"></i>
+                <i class="iconfont icon-sousuo"></i>
             </div>
             <div class="delect-text">
                 <!-- <i class="fa fa-comment-o"></i>
@@ -49,7 +49,7 @@ export default {
      overflow: hidden;
      height: 0.31rem;
      padding: 0rem 0.05rem ;
-     border-radius: 0.1rem;
+     border-radius: 0.2rem;
 }
  .serach input{
      height: 100%;
@@ -61,19 +61,20 @@ export default {
 }
  .serach i{
      position: absolute;
-     top: 0.15rem;
-     right: 0.7rem;
+     top: 0.2rem;
+     right: 0.75rem;
      font-size: 0.16rem;
 }
  .delect-text{
      font-size: 0.18rem;
      height: 0.5rem;
-     width: 55px;
+     width: 65px;
      text-align: center;
 }
  .delect-text i{
      padding: 0 0.05rem ;
      line-height: 0.5rem;
+     font-size: 22px;
 }
  
 </style>

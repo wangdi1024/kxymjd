@@ -289,7 +289,7 @@ body
     line-height: 12px;
 
     color: #000;
-    background-color: #efeff4;
+    background-color: #f8f8f8;
 
     -webkit-overflow-scrolling: touch;
 }
@@ -307,7 +307,7 @@ a:active
 
 .mui-content
 {
-    background-color: #efeff4;
+    background-color: #f8f8f8;
 
     -webkit-overflow-scrolling: touch;
 }

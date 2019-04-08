@@ -86,29 +86,30 @@ export default {
             padding-bottom: 0px;
             background-color: #fff;
             font-size: 12px;
-        p{
-            width: 100%;
-            height: 52px;
-            display: flex;
-            display: -webkit-flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-direction: column;
-            text-align: center;
-            margin-bottom :2px;
-            font-size :12px;
-            line-height 15px;
-            background-color #f2f2f2;
-        }
-         p.active{
-            border-left: 3px solid  #ff3b3c;
-            background-color: #fff;
-        }
-        .isshow{
-            overflow: hidden;
-            transition: height .3s;
+            overflow hidden
+            p{
+                width: 100%;
+                height: 52px;
+                display: flex;
+                display: -webkit-flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+                text-align: center;
+                margin-bottom :2px;
+                font-size :12px;
+                line-height 15px;
+                background-color #f2f2f2;
+            }
+            p.active{
+                border-left: 3px solid  #ff3b3c;
+                background-color: #fff;
+            }
+            .isshow{
+                overflow: hidden;
+                transition: height .3s;
+            }
         }
     }
-  }
 }
 </style>
