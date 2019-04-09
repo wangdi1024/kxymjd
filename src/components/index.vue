@@ -17,57 +17,7 @@
                 </mt-swipe-item>
             </mt-swipe>
         </div>
-        <!-- 活动公告 -->
-        <div class="mod-news">
-            <div class="news-left">
-                <a href="javascript:;">
-                    <img src="../assets/img/gonggao.png" alt="">
-                </a>
-            </div>
-            <div class="news-right">
-                <div class="title">
-                    <img src="../assets/img/icon-hot-article.png" alt="">
-                    <img src="../assets/img/icon-new-article.png" alt="">
-                </div>
-                <div class="hot-text">
-                   <publicTitle :textArr='textArr' time="4000"></publicTitle>
-                    <publicTitle :textArr='textArr1' time="2000"></publicTitle>
-                </div>
-            </div>
-        </div>
-        <!-- 秒杀导航 -->
-        <div class="nav-bar">
-            <!-- 秒杀活动 -->
-            <div class="now-seckill">
-                <div class="now-seckill-top">
-                    <span class="now-seckill-top-logo">秒杀活动</span>
-                    <span class="end-time">敬请期待。。。</span>
-                </div>
-                <div class="now-seckill-img">
-                    <div class="left-img seckill-img">
-                        <img src="../assets/img/seckill-img1.png" alt="">
-                    </div>
-                    <div class="right-img seckill-img">
-                        <img src="../assets/img/seckill-img3.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- 积分商城 -->
-            <div class="now-shop">
-                <div class="now-seckill-top">
-                    <span class="now-seckill-top-logo sort-logo">积分商城</span>
-                    <span style="padding-left:0.25rem;font-size: 0.1rem;color: #aaa;">好礼享不停</span>
-                </div>
-                <div class="now-seckill-img">
-                    <div class="left-img seckill-img">
-                        <img src="../assets/img/seckill-img2.png" alt="">
-                    </div>
-                    <div class="right-img seckill-img">
-                        <img src="../assets/img/seckill-img3.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <img src="../assets/img/hudu.png" alt="" id="hudu">
         <!-- 零食酒水 -->
         <div class="sore-brand">
             <div class="container">
@@ -123,7 +73,7 @@
                     <li>
                         <a href="javascript:;" onclick="show_class(1235)">
                             <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1156.jpg" alt="母婴用品">
-                            <span>母婴用品</span>
+                            <span>母婴用品</span> 
                         </a>
                     </li>
                     <li>
@@ -135,40 +85,83 @@
                 </ul>
             </div>
         </div>
+         <!-- 活动公告 -->
+        <div class="mod-news">
+            <div class="news-left">
+                <a href="javascript:;">
+                    <img src="../assets/img/tophead.png" alt="">
+                </a>
+            </div>
+            <div class="news-right">
+                <div class="title">
+                    <img src="../assets/img/hot-page.png" alt="">
+                </div>
+                <div class="hot-text">
+                   <publicTitle :textArr='textArr' time="2000"></publicTitle>
+                </div>
+            </div>
+        </div>
+         <!-- 秒杀导航 -->
+        <div class="nav-bar clearfix">
+            <!-- 秒杀活动 -->
+            <div class="now-seckill">
+                <div class="now-seckill-top">
+                    <span class="now-seckill-top-logo"><i class="skill-icon"></i>特惠精选</span>
+                    <span class="end-time">敬请期待。。</span>
+                </div>
+                <div class="now-seckill-img">
+                    <div class="left-img seckill-img">
+                        <a href="#">
+                            <img src="../assets/img/seckill-img1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="right-img seckill-img">
+                        <a href="#">
+                            <img src="../assets/img/seckill-img3.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 积分商城 -->
+            <div class="now-shop">
+                <div class="now-seckill-top">
+                    <span class="now-seckill-top-logo sort-logo"><i class="soreshop"></i>积分商城</span>
+                    <span style="font-size: 0.1rem;color: #aaa;">好礼享不停</span>
+                </div>
+                <div class="now-seckill-img">
+                    <div class="left-img seckill-img">
+                        <a href="#">
+                            <img src="../assets/img/seckill-img2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="right-img seckill-img">
+                        <a href="#">
+                            <img src="../assets/img/seckill-img3.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- 附近商家 -->
         <div class="mod-hot-stores">
             <!-- 标题 -->
             <div class="mod-title">
-                <i class="mod-title-icon"></i>
                 <span class="mod-title-text">附近商家</span>
+                <i class="mod-title-icon"></i>
+                <span style="color:#656565;font-size:0.12rem;font-weight:300;padding-left:0.2rem;">为您精选优质商家</span>
             </div>
-            <!-- 条件筛选导航 -->
-            <div class="mod-hot-stores-nav" >
-               <ul class="clearfix">
-                    <li v-for="(item, index) in sort" :key="item.id" :class="{'active':index==ins}"  @click="active(index)">
-                        <a href="javascript:;" >{{item.name}}</a>
-                    </li>
-               </ul>
-            </div>
-            <!-- 条件筛选 隐藏-->
-            <transition  class="mod-hot-stores-nav2" v-if="show" name="fade">
-                <div class="mod-hot-stores-nav2">
-                    <ul class="clearfix">
-                        <li v-for="(item,index) in storesNav.nav1" :key="item.id" :class="{'active':index==num}"  @click="serach(index)">
-                            <a href="javascript:;">{{item.name}}</a>
-                        </li>
-                    </ul>
+            <!-- 商家导航栏 -->
+            <div class="near-bussiness bussiness-bar" style="display: block; top: 0.8rem; z-index: 999999; position: static;">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"  style="width:69.5556px; margin-right:12px;" v-for="(item , index) in bussinessBar1" :key='index' :class="{'selected':selected==index}"  @click="isselected(index)">
+                            <p style="color:#656565">{{item}}</p>
+                        </div>
+                    </div>
                 </div>
-            </transition>
-            <div class="good-stores-nav">
-                <ul class="clearfix">
-                    <li v-for="(item,index) in storesNav.nav2" :key="item.id" :class="{'active':index==sub}"  @click="serachHot(index)">
-                        <a href="javascript:;">{{item.name}}</a>
-                    </li>
-                </ul>
             </div>
-            <!-- 下拉加载更多 -->
-            <div>
+            <!-- 商家推荐查看更多 -->
+            <div class="Businessmen-recommend">
                 <ul  class="hot-stores-list">
                     <li v-for="(item, index) in shopDetail" :key="index">
                         <div class="com-storelist-item top-line">
@@ -182,13 +175,14 @@
                                 <a href="#" class="shopName">{{item.name}}</a>
                                 <div class="detail">
                                     <p>经营品牌 : {{item.banrd}}</p>
-                                    <p>成立时间 : {{item.time}}</p>
                                     <p>起  售  额 :{{item.count}}</p>
                                 </div>
                                 <a href="#" class="favourable">{{item.sale}}</a>
                                 <router-link to="/showStore">
                                     <div class="enterShop">
-                                        <a href="#">进入店铺 ></a>
+                                        <a href="#">
+                                            <i></i>
+                                        </a>
                                     </div>
                                 </router-link>
                                 <div class="heart">
@@ -200,24 +194,48 @@
                     </li>
                 </ul>
                 <div class="more">
-                    <span>查看更多</span>
-                    <i class="fa fa-sort-desc"></i>
+                    <span>查看更多<i class="icon-more"></i></span>
+                    
                 </div>
             </div>
         </div>
         <!-- 品牌推荐 -->
         <div class="mod-brand">
-            <div class="mod-title">
+            <div class="mod-title" style="margin-left:15px;">
                 <i class="mod-title-icon"></i>
-                <span class="mod-title-text">品牌推荐</span>
+                <span class="mod-title-text" style="color:#f77a00">品牌推荐</span>
+                <span style="color:#656565;font-size:0.12rem;font-weight:300;padding-left:0.2rem;">为您精选优质品牌</span>
             </div>
-            <div class="brand-stores-nav">
-                <ul class="clearfix">
-                    <li class="brand-stores-nav-li" v-for="(item) in storesNav.nav2" :key="item.id">
-                        <a href="#">{{item.name}}</a>
-                    </li>
-                </ul>
+           <div class="near-bussiness bussiness-bar" style="display: block; top: 0.8rem; z-index: 999999; position: static;">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"  style="width:69.5556px; margin-right:12px;" v-for="(item , index) in bussinessBar1" :key='index' :class="{'selected':selected2==index}"  @click="isselected2(index)">
+                            <p style="color:#656565" v-on:click="show = !show">{{item}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <transition name="fade">
+                <div class="hot-goods-nav" v-if="show" style="    padding: 0 0.1rem 0.1rem 0.1rem;">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:void(0);" class="active">全部</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">全部</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">全部</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">全部</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">全部</a>
+                        </li>
+                    </ul>
+                </div>
+            </transition>
             <div class="data_template">
                 <ul>
                     <li>
@@ -333,6 +351,7 @@
  import hotGoods from './common/hot-goods.vue'
 //  引入公告栏组件
  import publicTitle from './common/public-title.vue'
+ import Swiper from "swiper"
 export default {
     name:'index',
     components:{
@@ -342,20 +361,13 @@ export default {
     },
     data() {
         return {
-            sort:[
-                {id:1,name:'最新'},{id:2,name:'综合排序'},{id:3,name:'哈哈'},{id:4,name:'啦啦'},{id:5,name:'排序'}
-            ],
-            ins:0,
-            num:0,
-            sub:0,
-            // 排序 判断是否显示下面一行的li的字段
-            show:false,
-            storesNav:{
-               nav1:[{id:1,name:'送货最快'},{id:2,name:'口碑好'},{id:3,name:'起订量'},{id:4,name:'满减活动'}],
-               nav2:[{id:1,name:'食品饮料'},{id:2,name:'居家日用'},{id:3,name:'个人护理'},{id:4,name:'个人护理'},{id:5,name:'厨房用具'},{id:6,name:'厨房用具'},{id:7,name:'厨房用具'},{id:8,name:'厨房用具'}]
-            },
-
+           bussinessBar1:[
+               '精选','上新','奶品水饮','休闲食品','中外名酒','粮油副食','家庭清洁','个人护理','家居家纺','厨房卫浴','母婴用品','办公用品'
+           ],
+            selected:0,
             // 附近商家的数据
+            selected2:0,
+            show:true,
             shopDetail:[
                 {
                 id:1,
@@ -420,6 +432,18 @@ export default {
     },
     mounted() {
         document.querySelector('body').setAttribute('style', 'background-color:#f8f8f8')
+        // swiper 的参数
+        var mySwiper = new Swiper('.swiper-container', {
+         freeMode:true,
+         width : 69,
+         slideToClickedSlide:true,
+         normalizeSlideIndex:false,
+         resistance : false,
+         resistanceRatio : 0.7,
+         iOSEdgeSwipeDetection : true,
+         slidesPerView :'auto',
+         slidesOffsetAfter : -250,
+        })
   },
     methods: {
     // 附近商家下面的一排点击事件和点到排序显示隐藏的li
@@ -463,10 +487,18 @@ export default {
             }
             
         },
+        // 商家精选点击添加类的事件
+        isselected(index){
+            this.selected=index
+        },
+        isselected2(index){
+            this.selected2=index
+        }
     }
 }
 </script>
 <style scoped>
+@import url('../../node_modules/swiper/dist/css/swiper.css');
     body{
         background: #f5f4f4 ;
         padding: 0px 0px 50px 0px;;
@@ -475,24 +507,37 @@ export default {
     .swiper{
         margin-top: 50px;
         width: 100%;
-        height: 166px;
+        height: 130px;
     }
     .swiper img{
         width: 100%;
         height: 100%;
     }
+    #hudu{
+        width: 100%;
+        /* background-color: red; */
+        position: absolute;
+        top: 1.69rem;
+        z-index: 2;
+    }
     .mod-news{
         /* width: 100%; */
-        height: 55px;
+        height: 40px;
         padding:  7px 10px;
         display: flex;
         display: -webkit-flex;
         background-color: #fff;
-       
+        align-items: center;
+    }
+    .mod-news .news-left a{
+        width: 0.95rem;
+        height: 0.18rem;
+        display: inline-block;
+        margin-left: 8px
     }
     .mod-news .news-left img{
-        width: 46px;
-        height: 41px;
+        width:100%;
+        height: 100%;
         margin-right: 5px;
     }
     .mod-news .news-right{
@@ -503,11 +548,11 @@ export default {
     .news-right .title{
         width: 32px;
         height: 100%;
+        margin-left: 10px;
     }
     .news-right .title img{
         width: 100%;
         height: 18px;
-        margin-bottom: 5px;
     }
     .news-right .hot-text{
         flex: 1;
@@ -520,17 +565,21 @@ export default {
         color: #666;
     }
     .nav-bar{
-        height: 113px;
-        padding: 5px;
+        height: 120px;
+        padding-bottom:5px;
         display: flex;
          display: -webkit-flex;
-        color: #fff;
+        color: #000;
         font-size: 12px;
+        border-top: 2px solid #f8f8f8;
+    }
+    .nav-bar .now-seckill{
+        border-right: 0.02rem solid #f8f8f8;
     }
     .nav-bar .now-seckill,.now-shop{
         flex: 1;
-         background-color: #ffffff;
-        padding: 7px ;
+        background-color: #ffffff;
+        padding: 8px ;
         border-radius: 5px;
     }
     .nav-bar .now-shop{
@@ -544,11 +593,30 @@ export default {
     }
     
     .nav-bar .now-seckill-top-logo{
-        width: 62px;
+        width: 80px;
         height: 20px;
-        background: -webkit-linear-gradient(left,#918eef,#6465f8);
-        padding: 5px;
-        border-radius: 5px;
+        /* padding: 5px; */
+        margin: 0px 0px 10px 3px;
+        display: inline-block;
+        line-height: 20px;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .nav-bar .now-seckill-top-logo i.skill-icon{
+        background: url('../assets/img/skill_icon.png')  no-repeat left center;
+        width: .18rem;
+        height: .18rem;
+        background-size: 0.18rem;
+        display: block;
+        float: left;
+        margin-right: 3px;
+    }
+    .nav-bar .now-seckill-top-logo i{
+        width: .18rem;
+        height: .18rem;
+        background-size: 0.18rem;
+        display: block;
+        float: left;
         margin-right: 3px;
     }
     .nav-bar .now-seckill .end-time{
@@ -558,22 +626,30 @@ export default {
      .now-seckill-img{
          display: flex;
          display: -webkit-flex;
-         height: 65px;
+         height: 67px;
      }
+    .now-seckill-img a{
+        display: block;
+        height: 100%;
+        width: 67px;
+        margin-left: 10px;
+    }
     .now-seckill-img .seckill-img img{
-        width: 86%;
+        width:100%;
         height: 100%;
     }   
     .nav-bar .now-seckill-top span.point{
         color: black;
     }
-    .now-seckill-top-logo.sort-logo{
-        background: -webkit-linear-gradient(left,#e79a02,#ea7806);
+    .now-seckill-top-logo.sort-logo i{
+        background: url('../assets/img/soreshop.png') no-repeat  center;
+        background-size: contain;
     }
     /* 零食酒水 */
     .sore-brand {
-        padding: 5px;
+        /* padding: 5px; */
         /* background-color: #fff; */
+        margin-bottom: 5px;
     }
     .sore-brand ul.clearfix{
         display: flex;
@@ -625,78 +701,55 @@ export default {
     .mod-title{
         width: 100%;
         height: 46px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 46px;
+        color: #0171fc;
+        position: relative;
+        font-weight: 700;
     }
      .mod-title i.mod-title-icon{
-        width: 5px;
-        height: 25px;
+        width: 2px;
+        height: 12px;
         display: block;
-        float: left;
-        background-color: #e79a02;
-        margin-right: 10px;
-        margin-top: 12px;
+        position: absolute;
+        left: 75px;
+        top: 17px;
+        background-color: #a4a4a4;
+        /* margin-right: 10px;
+        margin-top: 12px; */
      }
-     .mod-hot-stores-nav{
-         width: 100%;
-         /* margin: 10px; */
-     }
-      .mod-hot-stores-nav ul{
-         width: 100%;
-         height: 100%;
-     }
-     .mod-hot-stores-nav li{
-         width: 19%;
-        height: 25px;
-        line-height: 25px;
-        float: left;
-        text-align: center;
-        /* background-color: #fff; */
-     }
-    li.active{
-        color: #747474;
-        background: -webkit-linear-gradient(left,#e79a02,#ea7806);
-    }
-    transition{
-        display: block;
-    }
-    .mod-hot-stores-nav2{
+    .near-bussiness {
+        padding: 0 0.1rem 0.1rem 0.1rem;
+        background: #fff;
         width: 100%;
-     
-        margin-top: 10px;
     }
-    .mod-hot-stores-nav2 li,.good-stores-nav ul li{
-        float: left;
-        width: 23.5%;
+    .near-bussiness .swiper-wrapper .swiper-slide.selected{
+        color: #ff9000;
+        border-bottom: 0.025rem solid #ff9000;
+    }
+    .near-bussiness .swiper-wrapper .swiper-slide{
         text-align: center;
-        height: 26px;
-        line-height: 26px;
-       background: #eee;
-       margin-right: 4px;
+        font-size: 0.13rem;
+        height: 0.35rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        cursor: pointer;
+        color: #656565;
+        font-weight: 600;
+        /* width: 1.4rem !important; */
     }
-     .mod-hot-stores-nav2 li a, .good-stores-nav li a{
-          font-size: 12px;
-          color: #ff6000;
-    }
-    .good-stores-nav {
-        margin-top: 5px;
-    }
-    .good-stores-nav ul a{
-        
-    }
-    .good-stores-nav ul li {
-       
-        margin-bottom: 5px;
-    }
-    .mod-hot-stores-nav2 .active,.good-stores-nav .active{
-        
-        background: #ffe59f;
-    }
-    .fade-enter-active, .fade-leave-active {
-        transition: all .3s ease;;
-    }
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+    .Businessmen-recommend{
+        box-shadow: 0 0 0.05rem 0.06rem #f6f6f6;
     }
     .hot-stores-list li{
          display: -webkit-box;
@@ -707,6 +760,7 @@ export default {
         border-bottom: 1px solid #eee;
         align-items: center;
         height: 110px;
+        position: relative;
     }
     li.com-storelist-item {
         position: relative;
@@ -756,17 +810,22 @@ export default {
          width: 88px;
         height: 23px;
         display: inline-block;
-        right: 0rem;
-        bottom: 15px;
-       background: -webkit-linear-gradient(left,#e79a02,#ea7806);
-        border-radius: 10px;
-        /* text-align: center */
+        right: -11px;
+        bottom: 3px;
+
      }
       .describe-content .enterShop a{
           display: block;
-          color: #f2f2f2;
           text-align: center;
           line-height: 23px;
+      }
+      .describe-content .enterShop a i{
+          background: url('../assets/img/goshoping.png') no-repeat left top;
+          background-size: 0.65rem 0.2rem;
+          width: 65px;
+            height: .2rem;
+         bottom: .05rem;
+         display: block;
       }
       .describe-content .heart{
           width: 18px;
@@ -789,10 +848,42 @@ export default {
         line-height: 50px;
         font-size: 16px;
     }
+    .mod-hot-stores .more i{
+        background: url('http://www.kuaixiaoapp.com/wap/resource/img/icon-dropup.png');
+        display: inline-block;
+        width: .15rem;
+        height: .15rem;
+        background-size: cover;
+        transform: rotate(180deg);
+        vertical-align: -4.6%;
+        margin-left: .03rem;
+    }
     .mod-brand{
         background-color: #fff;
         margin-top: 10px;
-        padding: 7px 10px ;
+        /* padding: 7px 10px ; */
+    }
+    .mod-brand .hot-goods-nav{
+        margin-top: 0.05rem;
+        width: 100%;
+        background: #fff;
+    }
+    .mod-brand .hot-goods-nav li{
+        width: 18%;
+        height: 22px;
+        line-height: 22px;
+        float: left;
+        text-align: center;
+        margin-right: 0.04rem;
+        margin: 0px 4px 8px 0px ;
+    }
+    .mod-brand .hot-goods-nav li a.active{
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(left,#ff6000,#ff0500);
+        color: #fff;
+        display: block;
+        border-radius: 20px;
     }
     .brand-stores-nav li{
          width: 23.5%;
@@ -876,5 +967,11 @@ export default {
 .mod-hot-goods{
     background-color: #fff;
     margin-top: 10px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
