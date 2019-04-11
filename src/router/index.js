@@ -64,8 +64,10 @@ import product from '../components/product'
 import goodsDetail from '../components/goodsDetail'
 // 引入商品详情的子路由评价页面
 import evaluate from '../components/evaluate'
+import find from '../components/find'
 
 Vue.use(Router)
+
 
 export default new Router({
   routes: [
@@ -89,6 +91,12 @@ export default new Router({
       path:'/member',
       name:'member',
       component:member,
+      meta: { navShow: true}
+    },
+    {
+      path:'/find',
+      name:'find',
+      component:find,
       meta: { navShow: true}
     },
     {

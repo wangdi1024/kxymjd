@@ -60,4 +60,14 @@ input{
     padding: 8px 0px 8px 0px !important;
     
 }
-
+.pl-20 {
+    padding-left: .1rem;
+}
+.nowrap2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

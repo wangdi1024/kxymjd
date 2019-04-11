@@ -45,7 +45,10 @@
                 </div>
             </div>
             <div class="integral-exchange">
-                <tabContainer :list='data'>
+                <div>
+                    <div class="integral-classify" >
+                        <div class="integral" v-for="(integral, index) in data" @click="integralSelect(index)" :class="{'active' :active==index}">{{integral.text}}</div>
+                    </div>
                      <ul >
                         <li>
                            <div class="items-img">
@@ -78,7 +81,7 @@
                            </div>
                         </li>
                     </ul>
-                </tabContainer>
+                </div>
             </div>
         </div>
     </div>
@@ -105,6 +108,7 @@ export default {
                 {text:'<5000分以上'},
             ],
             isSign:false,
+            active:0,
         }
     },
     created(){
@@ -157,6 +161,10 @@ export default {
                     duration: 2000
                 });
              }
+        },
+        //选择积分事件
+        integralSelect(index){
+            this.active=index
         }
     },
 }
@@ -290,6 +298,29 @@ export default {
             .integral-exchange{
                 .seleted{
                     padding 0px;
+                }
+                .integral-classify{
+                    display flex
+                    border-bottom: 1px solid #dbdbdb;
+                    // padding-top 10px;
+                    .integral{
+                        flex 1
+                        margin-top 10px;
+                        height 50px;
+                        text-align center;
+                        line-height 50px
+                        background-color #fff
+                        border-right 1px solid #dbdbdb;
+                        font-size 13px;
+                        color #a4a4a4
+                    }
+                    .integral.active{
+                        color: #f36c10;
+                        background-color #ffecdb
+                    }
+                    .integral:last-child{
+                        border-right 0;
+                    }
                 }
                 ul{
                     display flex;
