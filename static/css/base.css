@@ -71,3 +71,17 @@ input{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.page-tmall {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: white;
+}
+.container {
+    max-width: 7.2rem;
+    margin: 0 auto;
+}
+.isolation-zone{
+    width: 100%;
+    height: 0.1rem;
+    background-color: #f2f2f2;
+}

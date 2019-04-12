@@ -24,7 +24,11 @@ import './assets/iconfont/css/font-awesome.css'
 // import vueTouch from 'kim-vue-touch'
 // Vue.use(vueTouch)// import vueTouch from 'kim-vue-touch'
 // Vue.use(vueTouch)
+//引入al字体图标
 import './assets/aliFonts/iconfont.css'
+// import Swiper from "swiper" 
+// import 'swiper/dist/css/swiper.min.css';
+// Vue.use(Swiper);
 Vue.config.productionTip = false
 //引入公共样式
 import '../static/css/base.css'

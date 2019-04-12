@@ -315,7 +315,6 @@ export default {
          .business-img {
             width 47px;
             height 47px;
-            // margin-right 23px;
             display inline-block
             }
         .business-text{
