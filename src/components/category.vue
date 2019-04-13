@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="router">
         <nav-title placeholder='请输入你要搜索的内容' color="background-color:#f2f2f2">
             <img src="../assets/img/home_logo.png" alt="" slot="img">
              <i class="iconfont icon-lingdang" slot="icon"></i>
@@ -103,6 +103,7 @@ export default {
         
     },
     mounted(){
+        this.$refs.router.style.position='static'
         this.mui('.mui-scroll-wrapper').scroll({
             deceleration: 0.0005 ,//flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
             indicators:false,

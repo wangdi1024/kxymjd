@@ -117,7 +117,9 @@ export default {
   },
   created(){
       console.log(this.$route.query.goodsId);//接受传递过来的商品id
+      
   },
+
 };
 </script>
 <style lang="stylus" scoped>

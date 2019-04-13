@@ -1,28 +1,30 @@
 <template>
-    <div class="page-tmall">
-        <div class="container">
-            <!-- 积分banner展示 -->
-            <div class="mod-tmall-banner">
-                <div class="sign_in2 sign"  v-if="isSign" @click="sign"><i class="btn-get-score">24</i></div>
-                <div class="sign_in sign" v-else  @click="sign"></div>
-                <div class="points_detail">
-                    <a href="#" class="integral">积分：21</a>
-                    <a href="#" class="go-IntegralMall points-position" ><i></i>积分商城</a>
-                    <a href="#" class="go-memberPointorder points-position"><i></i>积分订单</a>
+    <div class="box" ref="router">
+        <div class="page-tmall">
+            <div class="container">
+                <!-- 积分banner展示 -->
+                <div class="mod-tmall-banner">
+                    <div class="sign_in2 sign"  v-if="isSign" @click="sign"><i class="btn-get-score">24</i></div>
+                    <div class="sign_in sign" v-else  @click="sign"></div>
+                    <div class="points_detail">
+                        <a href="#" class="integral">积分：21</a>
+                        <a href="#" class="go-IntegralMall points-position" ><i></i>积分商城</a>
+                        <a href="#" class="go-memberPointorder points-position"><i></i>积分订单</a>
+                    </div>
                 </div>
-            </div>
-            <!-- 签到获取积分 -->
-            <modGetScore></modGetScore>
-            <!-- 商户认证 -->
-            <div class="store-approve">
-                <div class="store-approve-title line">商户认证</div>
-                <div class="store-approve-content">
-                    <div class="store-approve-icon"></div>
-                    <div class="store-approve-word">认证商户即可获得666元订货红包</div>
-                    <a href="#" class="store-approve-detail">查看</a>
+                <!-- 签到获取积分 -->
+                <modGetScore></modGetScore>
+                <!-- 商户认证 -->
+                <div class="store-approve">
+                    <div class="store-approve-title line">商户认证</div>
+                    <div class="store-approve-content">
+                        <div class="store-approve-icon"></div>
+                        <div class="store-approve-word">认证商户即可获得666元订货红包</div>
+                        <a href="#" class="store-approve-detail">查看</a>
+                    </div>
                 </div>
+                <div class="isolation-zone"></div>
             </div>
-            <div class="isolation-zone"></div>
         </div>
     </div>
 </template>
@@ -39,7 +41,11 @@ export default {
             isSign:false,
         }
     },
+    created(){
+     
+    },
     mounted(){
+        this.$refs.router.style.position='static'
          var date=new Date()
        this.isSign =localStorage.getItem('isSign')
        var currentDate=date.toLocaleDateString()

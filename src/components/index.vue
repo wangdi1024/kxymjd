@@ -23,13 +23,13 @@
             <div class="container">
                 <ul class="clearfix">
                     <li>
-                        <a href="javascript:;" onclick="show_class(1238)">
+                        <router-link to="/category" href="javascript:;" >
                             <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1370.jpg" alt="奶品水饮">
                             <span>奶品水饮</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li>
-                        <a href="javascript:;" onclick="show_class(1263)">
+                        <a href="javascript:;">
                             <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1368.jpg" alt="休闲食品">
                             <span>休闲食品</span>
                         </a>

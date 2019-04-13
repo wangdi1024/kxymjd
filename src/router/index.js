@@ -67,9 +67,9 @@ import evaluate from '../components/evaluate'
 import find from '../components/find'
 
 Vue.use(Router)
+Router.prototype.isBack=false
 
-
-export default new Router({
+const router = new Router({
   routes: [
     {
       path:'/',
@@ -87,16 +87,16 @@ export default new Router({
       component:category,
       meta: { navShow: true}
     },
+     {
+      path:'/find',
+      name:'find',
+      component:find,
+      meta: { navShow: true}
+    },
     {
       path:'/member',
       name:'member',
       component:member,
-      meta: { navShow: true}
-    },
-    {
-      path:'/find',
-      name:'find',
-      component:find,
       meta: { navShow: true}
     },
     {
@@ -261,3 +261,8 @@ export default new Router({
     }, 
   ]
 })
+router.beforeEach((from,to,next)=>{
+  // console.log(from);
+  next()
+})
+export default router;

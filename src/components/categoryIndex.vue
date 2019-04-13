@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="box" ref="router">
         <!-- 分类二级页面 -->
         <!-- 头部 -->
         <navTitle placeholder='搜索商品' color="background-color:#f2f2f2">
@@ -308,11 +308,16 @@ export default {
     },
     mounted(){
           document.querySelector('body').setAttribute('style', 'overflow-y: hidden;position: fixed;width:100%')
+          this.$refs.router.style.position='static'
+    },
+    destroyed(){
+        // this.$refs.router.style.position='absolute'
     },
     methods: {
         // 头部返回事件
         goBack(){
             this.$router.go(-1)
+            this.$router.isBack=true
         },
         //判断点击com-top的li高亮的事件
         choiceStatus(index){

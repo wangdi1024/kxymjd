@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="box" ref='router'>
         <!-- 商铺页面 -->
         <nav-title placeholder="搜索店铺商品" color='background-color:rgba(119,103,137,0.4)' inputcolor='background-color:rgba(255,255,255,0.6)'>
             <i class="mint-toast-icon mintui mintui-back" slot="img" @click="goBack"></i>
@@ -101,12 +101,17 @@ export default {
             isSort:false,
         }
     },
+    created(){
+       
+    },
     mounted() {
         document.querySelector('body').setAttribute('style', 'padding:0')
+        this.$refs.router.style.position='static'
     },
     methods:{
         goBack(){
             this.$router.go(-1)
+            this.$router.isBack=true
         },
        sort(){
            console.log(1);

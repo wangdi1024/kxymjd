@@ -13,7 +13,14 @@ const store = new Vuex.Store({
             address:'',
             // 详细地址
             DetailedAddress:'',
-        }
+            
+        },
+        states: 'turn-on',
     },
+    mutations: {
+        setTransition(state, states) {
+          state.states = states
+        }
+    }
 })
 export default store

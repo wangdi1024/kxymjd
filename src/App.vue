@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app clearfix">
+    <transition :name="transitionName">
+      <router-view class="router" />
+    </transition>
     <!-- <mt-tabbar v-model="selected" v-if="$route.meta.navShow">
       <mt-tab-item id="index" >
         <i class="iconfont icon-shouye1" aria-hidden="true"></i>
@@ -68,6 +70,7 @@ export default {
     return {
 
       active:'',
+      transitionName:'slide-left',
     }
   },
   created(){
@@ -84,13 +87,24 @@ export default {
         this.active=3
      }
   },
+  mounted(){
+   
+  },
   methods:{
     selected(index){
       this.active=index
-    }
+    },
   },
   watch: {
     '$route'(to,from){
+      // console.log(this.$router.isBack);
+      let isBack=this.$router.isBack
+      if(isBack){
+        this.transitionName='slide-right'
+      }else{
+        this.transitionName='slide-left'
+      }
+      this.$router.isBack=false
       // console.log(to);
      if(to.path=='/index'){
         this.active=0
@@ -188,29 +202,23 @@ body{
         }
       }
     }
+    .router{
+      transition:all .3s ease
+      position absolute
+      width 100%
+      z-index 1
+    }
+    .slide-left-enter-active,
+    .slide-right-leave-active{
+      opacity 0
+      transform :translate(100%,0)
+    }
+    .slide-left-leave-active,
+    .slide-right-enter{
+      opacity 0
+      transform :translate(-100% 0)
+    }
 }
- /* .mint-tab-item-label i{
-   display: inline-block;
-   font-size: 20px;
- } */
 
-/* .mint-tabbar{ */
-  /* padding: 7px 0px; */
-  /* width: 100%;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
-  box-shadow: 0 0 10px #9c9696; */
-/* } */
-
-/* .mint-tab-item a i{
-  color: #666 !important;
-}
-.mint-tabbar > .mint-tab-item.is-selected {
-  color: #fc9109;
-}
-.mint-tabbar > .mint-tab-item.is-selected p{
-  color: #fc9109;
-} */
 
 </style>

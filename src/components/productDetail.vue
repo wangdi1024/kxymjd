@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="box" ref="router">
         <!-- 商品详情的父路由 -->
         <div class='header'>
             <div class="left" @click="goBack">
@@ -57,7 +57,15 @@ export default {
         }
     },
     methods:{
-        goBack(){}
+        goBack(){
+            
+        }
+    },
+    created(){
+        // console.log(this.$route.path);
+    },
+    mounted(){
+         this.$refs.router.style.position='static'
     },
     beforeRouteUpdate(to,from,next){
         // console.log(to);
@@ -69,7 +77,12 @@ export default {
             this.active=3
         }
         next()
-    }
+    },
+    watch:{
+      '$route'(to,from){
+          console.log(from);
+      }
+  },
 }
 </script>
 <style lang="stylus" scoped>
