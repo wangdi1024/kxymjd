@@ -5,7 +5,7 @@
             <i class="mint-toast-icon mintui mintui-back" slot="img" @click="goBack"></i>
             <i class="fa fa-qrcode" slot="icon"></i>
         </nav-title>
-        <div class="mui-content content" style="position:fixed;top:0;left:0;z-index:-9999;width:100%">
+        <div class="mui-content content clearfix" style="z-index:9999;width:100%;height:100%">
             <div class="container1">
                 <!-- 店铺广告轮播 -->
                 <!-- <div class="store-swiper" >
@@ -105,13 +105,14 @@ export default {
        
     },
     mounted() {
-        document.querySelector('body').setAttribute('style', 'padding:0')
-        this.$refs.router.style.position='static'
+        document.querySelector('body').setAttribute('style', 'padding:0;height:100%')
+        // this.$refs.router.style.position='static'
     },
     methods:{
         goBack(){
             this.$router.go(-1)
             this.$router.isBack=true
+            console.log(666);
         },
        sort(){
            console.log(1);
@@ -129,6 +130,7 @@ export default {
             this.index=index
         },
     },
+   
 }
 </script>
 <style lang="stylus" scoped>
@@ -136,6 +138,7 @@ export default {
     overflow hidden;
     .content{
         margin-top 50px;
+        position fixed
         .container1{
             .store-swiper{
                 width: 100%;

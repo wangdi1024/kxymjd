@@ -29,7 +29,7 @@
     </div>
 </template>
 <script>
-import noData from './member/not-data'
+import noData from '../member/not-data'
 export default {
     name:'evaluate',
     components:{

@@ -2,7 +2,7 @@
 <!--热门商品加入购物车的组件-->
     <ul class="hot-stores-list">
         <li>
-            <router-link :to="{ path: '/productDetail/product', query: { goodsId: 3 }}" href="#">
+            <router-link :to="{ path: '/productDetail', query: { goodsId: 3 }}" href="#">
                 <div class="img-show">
                     <!-- <img :src="item.img" alt=""> -->
                     <slot name="img"></slot>

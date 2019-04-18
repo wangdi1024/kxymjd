@@ -58,15 +58,16 @@ import showStore from '../components/showStore'
 import test from '../components/test'
 // 引入商品详情页面
 import productDetail from '../components/productDetail'
-// 引入商品详情的子路由商品页面
-import product from '../components/product'
-// 引入商品详情的子路由详情页面
-import goodsDetail from '../components/goodsDetail'
-// 引入商品详情的子路由评价页面
-import evaluate from '../components/evaluate'
+// 引入发现页面
 import find from '../components/find'
-
+// 引入商家消息页面
+import memberMessage from '../components/memberMessage'
+// 引入咨询商家页面
+import businessMsg from '../components/businessMsg'
+// 引入购物车页面
+import shopcart from '../components/shopcart'
 Vue.use(Router)
+// 判断页面滑动是向左还是向右，默认向左
 Router.prototype.isBack=false
 
 const router = new Router({
@@ -91,6 +92,12 @@ const router = new Router({
       path:'/find',
       name:'find',
       component:find,
+      meta: { navShow: true}
+    },
+     {
+      path:'/shopcart',
+      name:'shopcart',
+      component:shopcart,
       meta: { navShow: true}
     },
     {
@@ -236,28 +243,20 @@ const router = new Router({
       path:'/productDetail',
       name:'productDetail',
       component:productDetail,
-      children:[
-        {
-          path:'/',
-          redirect: 'product'
-        },
-        {
-          path:'product',
-          name:'product',
-          component:product,
-        },
-        {
-          path:'goodsDetail',
-          name:'goodsDetail',
-          component:goodsDetail,
-        },
-        {
-          path:'evaluate',
-          name:'evaluate',
-          component:evaluate,
-        },
-      ],
-      linkActiveClass:'productActive'
+      // beforeEnter:(to,from,next)=>{
+      //   console.log(from);
+      //   next()
+      // },
+    }, 
+    {
+      path:'/memberMessage',
+      name:'memberMessage',
+      component:memberMessage,
+    }, 
+    {
+      path:'/businessMsg',
+      name:'businessMsg',
+      component:businessMsg,
     }, 
   ]
 })

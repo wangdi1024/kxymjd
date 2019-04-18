@@ -23,7 +23,7 @@
             <div class="container">
                 <ul class="clearfix">
                     <li>
-                        <router-link to="/category" href="javascript:;" >
+                        <router-link to="/categoryIndex" href="javascript:;" >
                             <img src="http://www.kuaixiaoapp.com/data/upload/shop/common/category-pic-1370.jpg" alt="奶品水饮">
                             <span>奶品水饮</span>
                         </router-link>

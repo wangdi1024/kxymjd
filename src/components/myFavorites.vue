@@ -40,8 +40,12 @@
                             </div>
                         </div>
                     </mt-tab-container-item>
+                    <!-- 资讯 -->
                     <mt-tab-container-item id="3">
                         <not-data v-if="information==3"></not-data>
+                        <ul>
+                            <mt-cell is-link v-for="(item ,index) in informationList" :key="index" :title="item.title" :label="item.time" ></mt-cell >
+                        </ul>
                     </mt-tab-container-item>
                 </mt-tab-container>
             </div>
@@ -71,6 +75,7 @@ export default {
             dealers:2,
             // 判断资讯栏无数据图片是否显示的字段
             information:3,
+            // 商品数组
              hotGoods:[
                 {
                 id:1,
@@ -91,6 +96,7 @@ export default {
                 goods_barcode:6923308815678
                 },
             ],
+            // 商家数组
             dealersList:[
                 {
                     store_img:require('../assets/img/06070838811996868.png'),//店铺头像
@@ -101,7 +107,11 @@ export default {
                     store_name:'深圳市深祥发贸易有限公司'
                 },
             ],
-            informationList:[],
+            // 资讯数组
+            informationList:[
+                {title:'这是一个寂寞的天',time:'1900-00-00 00:00:00'},
+                {title:'下着有些伤心的雨',time:'1900-00-00 00:00:00'}
+            ],
         }
     },
     created(){

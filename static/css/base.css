@@ -63,6 +63,9 @@ input{
 .pl-20 {
     padding-left: .1rem;
 }
+.pr-40{
+    padding-right: .2rem; 
+}
 .nowrap2 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -76,6 +79,13 @@ input{
     min-height: 100vh;
     background-color: white;
 }
+.bgwhite{
+    min-height: 100vh;
+}
+.bggray {
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
 .container {
     max-width: 7.2rem;
     margin: 0 auto;
@@ -84,4 +94,37 @@ input{
     width: 100%;
     height: 0.1rem;
     background-color: #f2f2f2;
+}
+.line:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f2f2f2;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border-radius: .05rem;
+}
+.bottom-line{
+    width: 110%;
+    border-bottom: 1px solid #f2f2f2;
+   position: absolute;
+   bottom:-10px;
+    left: -0.15rem;
+}
+.el-input-number .el-input {
+    display: inline-block;
 }

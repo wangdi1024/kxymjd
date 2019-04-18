@@ -6,10 +6,14 @@
                 <p class="mintui mintui-back"></p>
             </div>
             <div class="content">
-                <router-link :to="{ path: '/productDetail/product', query: { goodsId: 3 }}" href="" class="items"  :class="{'active':active==1}">商品</router-link>
-                <router-link :to="{ path: '/productDetail/goodsDetail', query: { goodsId: 4 }}" class="items" :class="{'active':active==2}">详情</router-link>
-                <router-link :to="{ path: '/productDetail/evaluate', query: { goodsId: 4 }}" href="#" class="items" :class="{'active':active==3}">评价</router-link>
+                <!-- <a :to="{ path: '/productDetail/product', query: { goodsId: 3 }}" href="" class="items"  :class="{'active':active==1}">商品</a>
+                <a :to="{ path: '/productDetail/goodsDetail', query: { goodsId: 4 }}" class="items" :class="{'active':active==2}">详情</a>
+                <a :to="{ path: '/productDetail/evaluate', query: { goodsId: 4 }}" href="#" class="items" :class="{'active':active==3}">评价</a> -->
+                <a href="#" class="items"  :class="{'active':active==1}" @click="selected(1)">商品</a>
+                <a  href="#" class="items" :class="{'active':active==2}" @click="selected(2)">详情</a>
+                <a  href="#" class="items" :class="{'active':active==3}" @click="selected(3)">评价</a>
             </div>
+            <!-- 点击显示隐藏的 -->
             <div class="right" @click="isshow=!isshow"></div>
         </div>
         <div class="hide-nav flex-block" id="top-hide-nav" :class="{'active':isshow==true}">
@@ -26,7 +30,12 @@
                 <p>消息</p>
             </a>
         </div> 
-        <router-view class="product-active"  style="margin-top:50px"></router-view>
+        <!-- <router-view class="product-active"  style="margin-top:50px"></router-view> -->
+        <div class="product-content">
+            <product v-show="select==1"></product>
+            <goodsDetail v-show="select==2"></goodsDetail>
+            <evaluate v-show="select==3"></evaluate>
+        </div>
         <div class="detail-box flex-block">
             <div class="more-option">
                 <a href="#">
@@ -46,19 +55,37 @@
     </div>
 </template>
 <script>
+import product from './productDetail/product'
+import goodsDetail from './productDetail/goodsDetail'
+import evaluate from './productDetail/evaluate'
 export default {
     name:"productDetail",
+    components:{
+        product,
+        goodsDetail,
+        evaluate,
+    },
     data() {
         return {
             // 判断title添加下划线的字段
             active:1,
             // 判断头部下拉框是否显示的字段
-            isshow:false
+            isshow:false,
+            oldUrl:'',
+            // 切换tab栏的字段
+            select:1,
         }
     },
     methods:{
+        // 返回
         goBack(){
-            
+            this.$router.replace(this.oldUrl+'')
+             this.$router.go(-1)
+            this.$router.isBack=true
+        },
+        selected(i){
+            this.active=i
+            this.select=i
         }
     },
     created(){
@@ -66,23 +93,20 @@ export default {
     },
     mounted(){
          this.$refs.router.style.position='static'
+         this.$nextTick(()=>{
+             console.log(this.oldUrl)
+         })
+         
+    },
+    beforeRouteEnter (to, from, next){
+        next(vm=>{
+            vm.oldUrl = from.path
+        })
     },
     beforeRouteUpdate(to,from,next){
-        // console.log(to);
-        if(to.path=='/productDetail/product'){
-            this.active=1
-        }else if(to.path=='/productDetail/goodsDetail'){
-            this.active=2
-        }else{
-            this.active=3
-        }
-        next()
+      
+       
     },
-    watch:{
-      '$route'(to,from){
-          console.log(from);
-      }
-  },
 }
 </script>
 <style lang="stylus" scoped>
@@ -139,6 +163,9 @@ export default {
                 transform: translateX(-50%);
             }
         }
+    }
+    .product-content{
+        margin-top 50px
     }
     .hide-nav{
         position: fixed;

@@ -24,13 +24,82 @@
                     </div>
                 </div>
                 <div class="isolation-zone"></div>
+                <div class="get-discount line">我要优惠</div>
+                <!-- 红包 -->
+                <div class="kxycoupon">
+                    <ul>
+                        <!-- <li class="kxycoupon-in-li over" >
+                            <div class="kxycoupon-money-left">
+                                <div class="kxycoupon-money-img">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/outdate_order_coupon.png" alt="" class="kxycouponimgin">
+                                </div>
+                                <div class="kxycoupon-money-text kxycoupon-random-text">
+                                    <p>418快销狂欢节全员狂欢券</p>
+                                    <p>快销易通用 (可跨店使用)</p>
+                                    <p>说明：认证商户可领</p>
+                                </div>
+                                 <div class="kxycoupon-money-qiang">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/get_over.png" alt="">
+                                    <div class="kxynoreceive">
+                                        <a href="#">查红包 ></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-line"></div>
+                        </li> -->
+                        <li class="kxycoupon-in-li " :class="{'over' : isQiang==0}">
+                            <div class="kxycoupon-money-left">
+                                <div class="kxycoupon-money-img">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/outdate_order_coupon.png" alt="" class="kxycouponimgin" v-if="isQiang==0">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/order_coupon.png" alt="" class="kxycouponimgin" v-else>
+                                </div>
+                                <div class="kxycoupon-money-text " :class="{'kxycoupon-random-text' : isQiang==0}">
+                                    <p>418快销狂欢节全员狂欢券</p>
+                                    <p>快销易通用 (可跨店使用)</p>
+                                    <p>说明：认证商户可领</p>
+                                </div>
+                                <div class="kxycoupon-money-qiang">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/get_over.png" alt="已售完" v-if="isQiang==0">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/get_order_coupon.png" alt="抢红包" v-else  @click="qiangRedpacket(0)">
+                                    <div class="kxynoreceive" v-show=" isQiang==0">
+                                        <a href="#">查红包 ></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-line"></div>
+                        </li>
+                        <li class="kxycoupon-in-li " :class="{'over' : isQiang==1}">
+                            <div class="kxycoupon-money-left">
+                                <div class="kxycoupon-money-img">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/outdate_order_coupon.png" alt="" class="kxycouponimgin" v-if="isQiang==1">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/order_coupon.png" alt="" class="kxycouponimgin" v-else>
+                                </div>
+                                <div class="kxycoupon-money-text " :class="{'kxycoupon-random-text' : isQiang==1}">
+                                    <p>418快销狂欢节全员狂欢券</p>
+                                    <p>快销易通用 (可跨店使用)</p>
+                                    <p>说明：认证商户可领</p>
+                                </div>
+                                <div class="kxycoupon-money-qiang">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/get_over.png" alt="已售完" v-if="isQiang==1">
+                                    <img src="http://www.kuaixiaoapp.com/wap/resource/img/member/get_order_coupon.png" alt="抢红包" v-else  @click="qiangRedpacket(1)">
+                                    <div class="kxynoreceive" v-show=" isQiang==1">
+                                        <a href="#">查红包 ></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-line"></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+// 引入签到获取积分组件
 import modGetScore from './common/mod-get-score'
-import { Toast } from 'mint-ui';
+// 引入弹窗
+import { Dialog } from 'vant';
 export default {
     name:'find',
     components:{
@@ -38,15 +107,18 @@ export default {
     },
     data() {
         return {
+            // 判断是否签到的字段
             isSign:false,
+            // 领取红包的字段，后期后台返回数据后可以不要
+            isQiang:'',
         }
     },
     created(){
      
     },
     mounted(){
-        this.$refs.router.style.position='static'
-         var date=new Date()
+        var date=new Date()
+        // 获取签到存的localStorage对比当前时间，如果已经签到则返回false
        this.isSign =localStorage.getItem('isSign')
        var currentDate=date.toLocaleDateString()
        if(currentDate!=localStorage.getItem('sign')){
@@ -54,6 +126,7 @@ export default {
        }
     },
     methods:{
+        // 签到
         sign(){
             var date=new Date()
              console.log(date);
@@ -65,25 +138,32 @@ export default {
             console.log(currentDate);
              if(this.isSign==false && localStorage.getItem('sign')==null||currentDate!=localStorage.getItem('sign')){
                  localStorage.setItem('sign',currentDate)
-                
-                  Toast({
+                   Dialog.alert({
                     message: '签到成功',
-                    iconClass: 'fa fa-check fa-5x',
-                    duration: 2000
+                    
                 });
                 this.isSign=true
                  localStorage.setItem('isSign',this.isSign)
              }else{
-                   Toast({
+                   Dialog.alert({
                     message: '您已经签过到了',
-                    duration: 2000
                 });
              }
+        },
+        // 抢红包 需要判断用户是否是认证会员和红包是否是所有用户可以领取和是否领取 字段需要后台数据
+        qiangRedpacket(index){
+            Dialog.alert({
+            message: '领取成功'
+            }).then(() => {
+                this.isQiang=index
+               
+            });
         }
     }
 }
 </script>
 <style lang="stylus" scoped>
+// 积分banner展示
 .mod-tmall-banner{
     background: url(http://www.kuaixiaoapp.com/wap/resource/img/sign_head.png) no-repeat;
     background-size: 100% 100%;
@@ -168,6 +248,7 @@ export default {
         }
     }
 }
+// 商户认证
 .store-approve{
     width: 100%;
     height 0.88rem
@@ -207,6 +288,103 @@ export default {
             background-color: #ff4e00;
             border: 1px solid #ff4e00;
             border-radius: 0.05rem;
+        }
+    }
+}
+// 我要优惠
+.get-discount {
+    color: red;
+    font-size: 0.16rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    position relative
+}
+// 红包
+.kxycoupon{
+    background: #fff;
+    padding: 0rem 0.1rem 0.5rem 0.1rem;
+    margin: 0 0.1rem;
+    border-radius: 0.1rem;
+    ul{
+        li.kxycoupon-in-li.over{
+            background: #aaa;
+            .kxycoupon-money-text.kxycoupon-random-text{
+                p{
+                    color #fff
+                }
+            }
+        }
+        .kxycoupon-in-li{
+            position relative
+            height: 0.93rem;
+            margin-top 10px
+            margin-bottom: 0.2rem;
+            border-radius: 0.2rem;
+            background: #fff3e0;
+            .kxycoupon-money-left {
+                width: 100%;
+                border: none;
+                display flex
+                padding: 0.15rem 0 0 0.1rem;
+                // border-right: 1px dashed #ff8151;
+                border-radius: 0.2rem;
+                .kxycoupon-money-img {
+                    width: 0.45rem;
+                    height: 0.6rem;
+                    border-radius: 0.075rem;
+                    img{
+                        width 100%
+                        height 100%
+                    }
+                }
+                .kxycoupon-money-text{
+                    padding: 0 0 0 0.1rem;
+                    flex 1
+                    p:nth-child(1){
+                        font-size: 0.16rem;
+                        color: #ff5101;
+                        font-weight: 700;
+                        line-height 30px
+                        height: 0.3rem;
+                    }
+                    p:nth-child(2){
+                        font-weight: 700;
+                        font-size: 0.11rem;
+                        
+                    }
+                    p:nth-child(3){
+                        font-size: 0.11rem;
+                        color: #ccc;
+                        width: 2rem;
+                        margin-top 3px
+                    }
+                }
+                .kxycoupon-money-qiang{
+                    // width 52px
+                    // height 52px
+                    margin-right 10px
+                    img{
+                        width 52px
+                        height 52px
+                    }
+                    .kxynoreceive{
+                        background-color #fff
+                        width: 0.6rem;
+                        height: 0.15rem;
+                        line-height: 0.15rem;
+                        border-radius: 0.35rem;
+                        margin-top 5px
+                        a{
+                            height 100%
+                            width 100%
+                            padding-left 7px
+                        }
+                    }
+                }
+            }
         }
     }
 }

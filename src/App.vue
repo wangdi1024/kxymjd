@@ -3,28 +3,7 @@
     <transition :name="transitionName">
       <router-view class="router" />
     </transition>
-    <!-- <mt-tabbar v-model="selected" v-if="$route.meta.navShow">
-      <mt-tab-item id="index" >
-        <i class="iconfont icon-shouye1" aria-hidden="true"></i>
-        <p>首页</p>
-      </mt-tab-item>
-      <mt-tab-item id="category" >
-        <i class="iconfont icon-fenleixuanzhong" aria-hidden="true"></i>
-        <p>分类</p>
-      </mt-tab-item>
-      <mt-tab-item id="find" >
-        <i class="fa fa-list" aria-hidden="true"></i>
-        <p>发现</p>
-      </mt-tab-item>
-      <mt-tab-item id="发现" >
-        <i class="iconfont icon-gouwucheman" aria-hidden="true"></i>
-          <p>购物车</p>
-      </mt-tab-item>
-      <mt-tab-item id="member" > 
-        <i class="iconfont icon-wodedangxuan" aria-hidden="true"></i>
-          <p>我的</p>
-      </mt-tab-item>
-    </mt-tabbar> -->
+   <!-- 底部 -->
     <div class="com-footer"  v-if="$route.meta.navShow">
       <ul>
         <li class="index" >
@@ -46,10 +25,10 @@
           </router-link>
         </li>
         <li class="shopcart">
-          <a href="#" :class="{'active' :active==3}">
+          <router-link to="/shopcart" :class="{'active' :active==3}">
             <i class="shopcart-icon" :class="{'active' :active==3}"></i>
             <p>购物车</p>
-          </a>
+          </router-link>
         </li>
         <li class="member" >
           <router-link to="/member" href="#" :class="{'active' :active==4}">
@@ -70,36 +49,44 @@ export default {
     return {
 
       active:'',
-      transitionName:'slide-left',
+      transitionName:'',
     }
   },
+  // 判断进入的是哪个页面，就高亮哪一个
   created(){
     // console.log(this.$route.path);
     if(this.$route.path=='/index'){
         this.active=0
+
      }else if(this.$route.path=='/category'){
        this.active=1
+
      }else if(this.$route.path=='/find'){
         this.active=2
+
      }else if(this.$route.path=='/member'){
        this.active=4
-     }else{
+
+     }else if(this.$route.path=='/shopcart'){
         this.active=3
+
      }
   },
   mounted(){
    
   },
   methods:{
+    // 底部高亮事件
     selected(index){
       this.active=index
     },
   },
+  // 监听路由到哪个页面
   watch: {
     '$route'(to,from){
-      // console.log(this.$router.isBack);
+      // console.log(to);
       let isBack=this.$router.isBack
-      if(isBack){
+      if(isBack==true && to.path!=='/index'&& to.path!=='/category'&& to.path!=='/find'&& to.path!=='/member'&&to.path!=='/shopcart'){
         this.transitionName='slide-right'
       }else{
         this.transitionName='slide-left'
@@ -107,14 +94,19 @@ export default {
       this.$router.isBack=false
       // console.log(to);
      if(to.path=='/index'){
+        this.transitionName='',
         this.active=0
      }else if(to.path=='/category'){
+       this.transitionName='',
        this.active=1
      }else if(to.path=='/find'){
+       this.transitionName='',
         this.active=2
      }else if(to.path=='/member'){
+       this.transitionName='',
        this.active=4
-     }else{
+     }else if(to.path=='/shopcart'){
+       this.transitionName='',
        this.active=3
      }
     }
@@ -203,7 +195,7 @@ body{
       }
     }
     .router{
-      transition:all .3s ease
+      transition:all .25s ease
       position absolute
       width 100%
       z-index 1

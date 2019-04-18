@@ -43,7 +43,7 @@
                    <em class="word_css_three"><span class="pledge"></span>&nbsp;正品保证</em>
                    <em style="float:right;font-size: 0.28rem;font-weight: 700;">
                        <i id="click" class="check-detail" @click="show=!show">
-                           <img src="../assets/img/icon-dropup.png" alt="">
+                           <img src="../../assets/img/icon-dropup.png" alt="">
                        </i>
                    </em>
                </div>
@@ -68,7 +68,7 @@
            </div>
            <div class="product-num-business clearfix">
                <div class="business-logo mui-pull-left">
-                   <img src="../assets/img/06070838811996868.png" alt="">
+                   <img src="../../assets/img/06070838811996868.png" alt="">
                </div>
                <div class="business-title mui-pull-left">
                    <p class="business-name">深圳市聚特佳生物科技有限公司</p>
@@ -80,7 +80,7 @@
            </div>
            <div class="mod-dropup">
                <i id="click" class="check-more">
-                   <img src="../assets/img/icon-dropup.png" alt="">
+                   <img src="../../assets/img/icon-dropup.png" alt="">
                </i>
                点击查看图文详情
            </div>
@@ -116,9 +116,9 @@ export default {
       }
   },
   created(){
-      console.log(this.$route.query.goodsId);//接受传递过来的商品id
-      
+      console.log(this.$route.query.goodsId);//接受传递过来的商品id   
   },
+
 
 };
 </script>
@@ -199,7 +199,7 @@ export default {
                     margin-left: 0.05rem;
                     color: black;
                     i{
-                        background url('../assets/img/damage-icon-two.png')
+                        background url('../../assets/img/damage-icon-two.png')
                         width: 0.12rem;
                         height: 0.14rem;
                         margin-left: .13rem;
@@ -208,7 +208,7 @@ export default {
                         vertical-align: sub;
                     }
                     span{
-                        background url('../assets/img/pledge-icon-two.png')
+                        background url('../../assets/img/pledge-icon-two.png')
                         width: 0.12rem;
                         height: 0.14rem;
                         margin-left: .13rem;

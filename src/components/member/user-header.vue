@@ -3,7 +3,7 @@
         <div class="user-icon"><img src="../../assets/img/default_user_portrait.gif" alt=""></div>  
         <p class="user-name">我是谁</p>
         <div class="user-approve">商户未认证</div>
-        <a href="#" class="message"><i class="fa fa-envelope"></i></a>
+        <router-link to="/memberMessage" class="message"><i class="fa fa-envelope"></i></router-link>
         <div class="user-sign" @click="sign">
             <i class="fa fa-pencil-square-o"></i>
             <span>签到</span>

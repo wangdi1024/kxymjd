@@ -71,6 +71,7 @@ export default {
     .margin-t{
         height: 300px;
         margin-top: 15px;
+        margin-bottom 50px
         background-color #fff
         border-radius 13px;
         .nav-title{

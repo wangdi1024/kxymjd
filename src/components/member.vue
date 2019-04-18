@@ -31,7 +31,9 @@ export default {
             
         }
     },
-
+    mounted(){
+        // document.querySelector('body').setAttribute('style','padding-bottom:50px')
+    }
 }
 </script>
 <style lang="stylus" scoped>

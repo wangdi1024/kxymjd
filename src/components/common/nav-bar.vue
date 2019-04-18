@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-    name:'newBar',
+    name:'navBar',
     props:['title'],
     data() {
         return {
