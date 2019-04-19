@@ -2,7 +2,7 @@
     <div class="box">
         <!-- 头部 -->
        <mt-header title="购物车" >
-        <mt-button slot="right">编辑</mt-button>
+        <mt-button slot="right" @click="iseditor($event)" ref="editor">编辑</mt-button>
        </mt-header>
        <!-- 主体部分 -->
        <div class="container has-head-foot">
@@ -12,95 +12,37 @@
                    <li class="shops">
                        <div class="shop-title">
                            <label for="" class="ui-control pr-40">
-                               <input type="checkbox" name="businessname" id="businessname" value="pass" @click="selectAllBtn($event)" v-model="item" >
-                               <span class=" span-checkbox" :class="item==true?'ui-checkbox-x':'ui-checkbox'"></span>
+                               <input type="checkbox" name="businessname" id="businessname" value="pass"  v-model="allChecked" >
+                               <span class=" span-checkbox" :class="allChecked==true?'ui-checkbox-x':'ui-checkbox'"></span>
                            </label>
                            <a href="#" class="text-info">深圳市剑门贸易有限公司<i class="iconfont icon-tubiao_jiyao-xiangyou" style="color:#cccccc"></i></a>
                        </div>
                        <div class="product-list" id="ul">
-                           <div class="mansong-id">
-                               <div class="items" id="li">
+                           <div class="mansong-id" v-for="(item ,index) in goodsDetail" :key="index" id="li">
+                               <div class="items" >
                                    <div class="item-control plr-20">
                                        <label for="" class="ui-control">
-                                           <input type="checkbox" name="businessname" id="businessname" value="114382|30" class="selBtn"   >
-                                           <span class=" span-checkbox" :class="item==true?'ui-checkbox-x':'ui-checkbox'" @click="selectBtn(1)"></span>
+                                           <input type="checkbox" name="businessname" id="businessname" class="selBtn"    v-model="item.checked" >
+                                           <span class="span-checkbox"  :class="item.checked==true?'ui-checkbox-x':'ui-checkbox'"></span>
                                        </label>
                                    </div>
                                    <a href="#" class="go-goodsDetail">
                                         <div class="product-img">
                                                 <div href="#" class="touchArea">
-                                                    <img src="http://www.kuaixiaoapp.com/data/upload/shop/store/goods/1/1_06035642721320215_240.png" alt="">
+                                                    <img :src="item.goosImg" alt="">
                                                 </div>
                                         </div>
                                         <div class="item-inner ">
                                             <div href="#" class="item-title touchArea">
                                                 <span class="font-red">热卖爆款</span>
-                                                <span class="goodsName">亿家馨泡鸭翅（香辣味）【28包/箱】</span>
-                                                <p  class="text-warp">条码 : 6971062710036</p>
+                                                <span class="goodsName">{{item.goodsTitle}}</span>
+                                                <p  class="text-warp">条码 : {{item.tiaoma}}</p>
                                                 <p class="text-warp ">限购6000</p>
                                             </div>
                                         </div>
                                    </a>
                                    <div class="text-warning">
-                                       <span style="color:#ff273b;font-size:0.15rem"><em style="font-size:0.1rem">￥</em>2.7<span style="font-size:0.1rem;color:#ff273b;">/包</span></span>
-                                   </div>
-                                   <numBox></numBox>
-                               </div>
-                           </div>
-                           <div class="mansong-id">
-                               <div class="items" id="li">
-                                   <div class="item-control plr-20">
-                                       <label for="" class="ui-control">
-                                           <input type="checkbox" name="businessname" id="businessname" value="114382|30" class="selBtn" @click="selectBtn(2)">
-                                           <span class="span-checkbox" :class="item==true||selectIndex==2?'ui-checkbox-x':'ui-checkbox'" ></span>
-                                       </label>
-                                   </div>
-                                   <a href="#" class="go-goodsDetail">
-                                        <div class="product-img">
-                                                <div href="#" class="touchArea">
-                                                    <img src="http://www.kuaixiaoapp.com/data/upload/shop/store/goods/1/1_06035642721320215_240.png" alt="">
-                                                </div>
-                                        </div>
-                                        <div class="item-inner ">
-                                            <div href="#" class="item-title touchArea">
-                                                <span class="font-red">热卖爆款</span>
-                                                <span class="goodsName">亿家馨泡鸭翅（香辣味）【28包/箱】</span>
-                                                <p  class="text-warp">条码 : 6971062710036</p>
-                                                <p class="text-warp ">限购6000</p>
-                                            </div>
-                                        </div>
-                                   </a>
-                                   <div class="text-warning">
-                                       <span style="color:#ff273b;font-size:0.15rem"><em style="font-size:0.1rem">￥</em>2.7<span style="font-size:0.1rem;color:#ff273b;">/包</span></span>
-                                   </div>
-                                   <numBox></numBox>
-                               </div>
-                           </div>
-                           <div class="mansong-id">
-                               <div class="items" id="li">
-                                   <div class="item-control plr-20">
-                                       <label for="" class="ui-control">
-                                           <input type="checkbox" name="businessname" id="businessname" value="114382|30" class="selBtn">
-                                           <span class="span-checkbox" :class="item==true?'ui-checkbox-x':'ui-checkbox'" @click="selectBtn(3)"></span>
-                                       </label>
-                                   </div>
-                                   <a href="#" class="go-goodsDetail">
-                                        <div class="product-img">
-                                                <div href="#" class="touchArea">
-                                                    <img src="http://www.kuaixiaoapp.com/data/upload/shop/store/goods/1/1_06035642721320215_240.png" alt="">
-                                                </div>
-                                        </div>
-                                        <div class="item-inner ">
-                                            <div href="#" class="item-title touchArea">
-                                                <span class="font-red">热卖爆款</span>
-                                                <span class="goodsName">亿家馨泡鸭翅（香辣味）【28包/箱】</span>
-                                                <p  class="text-warp">条码 : 6971062710036</p>
-                                                <p class="text-warp ">限购6000</p>
-                                            </div>
-                                        </div>
-                                   </a>
-                                   <div class="text-warning">
-                                       <span style="color:#ff273b;font-size:0.15rem"><em style="font-size:0.1rem">￥</em>2.7<span style="font-size:0.1rem;color:#ff273b;">/包</span></span>
+                                       <span style="color:#ff273b;font-size:0.15rem"><em style="font-size:0.1rem">￥</em>{{item.price}}<span style="font-size:0.1rem;color:#ff273b;">/包</span></span>
                                    </div>
                                    <numBox></numBox>
                                </div>
@@ -108,6 +50,24 @@
                        </div>
                    </li>
                </ul>
+           </div>
+       </div>
+       <div class="mod-total">
+           <div id="chooseAll" class="chooseAll">
+               <label for="" class="ui-control">
+                   <input type="checkbox" name="type" id="allcheck" value="pass">
+				    <span class="ui-checkbox span-checkbox"></span>
+               </label>
+               <label class="text-all" for="allcheck">全选</label>
+           </div>
+           <div class="pay-money">
+               <div class="inner-text" v-if="collect">
+                   <span>总计 : </span>
+                   <span class="" style="color:#ff273b;font-size:.16rem">¥</span>
+                   <span class="" style="color:#ff273b;font-size:.16rem">1510.20</span>
+               </div>
+               <div class="pay-order" style="margin-right:5px" v-else>移入收藏夹</div>
+               <div  class="pay-order "  :class="{'active':collect==false}">结算</div>
            </div>
        </div>
     </div>
@@ -123,39 +83,49 @@ export default {
     },
     data() {
         return {
-           item:true,
-           selectIndex:'',
+            collect:true,
+           goodsDetail:[
+               {goodsTitle:'亿家馨泡鸭翅（香辣味）【28包/箱】',tiaoma:'6971062710036',price:'3.5',id:0,goosImg:require('../assets/img/1_06041668029991398_240.png'),checked:true},
+               {goodsTitle:'亿家馨泡鸭翅（香辣味）【28包/箱】',tiaoma:'6971062710036',price:'3.5',id:1,goosImg:require('../assets/img/1_06035642721320215_240.png'),checked:true},
+               {goodsTitle:'亿家馨泡鸭翅（香辣味）【28包/箱】',tiaoma:'6971062710036',price:'3.5',id:2,goosImg:require('../assets/img/1_06040105865781148_240.png'),checked:true},
+               {goodsTitle:'亿家馨泡鸭翅（香辣味）【28包/箱】',tiaoma:'6971062710036',price:'3.5',id:3,goosImg:require('../assets/img/1_06041668029991398_240.png'),checked:true},
+           ],
         }
     },
     methods:{
-       selectAllBtn(e){
-           console.log(this.item);
-           let checked=e.target.checked
-           let checkedDom=document.getElementsByClassName('selBtn')
-        //    console.log(checkedDom);
-           let idArray=[]
-           if(checked){
-               for(var i=0;i<=checkedDom.length-1;i++){
-                   checkedDom[i].checked=true
-                //    console.log(1);
-               }
-           }else{
-               for(var i=0;i<=checkedDom.length-1;i++){
-                   checkedDom[i].checked=false
-                //    console.log(2);
-               }
-           }
-       },
-       selectBtn(index){
-        
-           console.log(666);
-           if(this.selectIndex=index){
-               this.selectIndex=!index
-           }else{
-               this.selectIndex=index
-           }
-       }
+        iseditor(e){
+            this.collect =!this.collect
+            if(e.target.innerText=='编辑'){
+                 e.target.innerText='完成'
+                 
+            }else{
+                 e.target.innerText='编辑'
+            }
+        }
+      
     },
+    computed:{
+        allChecked:{
+            get:function(){
+                return this.checkedCount == this.goodsDetail.length;
+            },
+            set: function(value){
+                this.goodsDetail.forEach(function(item){
+                    item.checked = value
+                })
+                return value;
+            }
+        },
+        checkedCount: {
+            get: function(){
+                var i = 0;
+                this.goodsDetail.forEach(function(item){
+                    if(item.checked == true) i++;
+                })
+                return i;
+            }
+        }
+    }
 }
 </script>
 <style lang="stylus" scoped>
@@ -171,7 +141,7 @@ export default {
     }
     .has-head-foot{
         margin-top 50px
-        margin-bottom 50px
+        margin-bottom 100px
         overflow scroll
         .cart-list{
             .shops{
@@ -262,6 +232,7 @@ export default {
                 right: 0;
                 bottom: 0;
                 margin: 0;
+                width 19px
             }
             span.span-checkbox{
                 display: inline-block;
@@ -276,6 +247,75 @@ export default {
             .ui-checkbox-x{
                 background url('../assets/img/radio_active.png')
                 background-size: 100%;
+            }
+        }
+    }
+    .mod-total{
+        position fixed
+        bottom: .48rem;
+        width 100%
+        display flex
+        min-width: 3.4rem;
+        height: 0.5rem;
+        background-color: #fff;
+        // transform: translateX(-50%);
+        box-shadow: 0 3px 16px 4px rgba(0, 0, 0, 0.06);
+        z-index: 96;
+        .chooseAll{
+            padding-left: .1rem;
+            display flex
+            .ui-control{
+                position: relative;
+               .span-checkbox{
+                    width: .19rem;
+                    height: .19rem;
+                    transition: all .1s;
+                    display inline-block
+                    margin-top 15px
+               }
+
+               #allcheck{
+                    opacity 0
+                    z-index -1
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+               }
+               .ui-checkbox{
+                    background url('../assets/img/radio.png')
+                    background-size: 100%;
+               }
+            }
+            .text-all{
+                padding-left: .05rem;
+                font-size: .14rem;
+                line-height 50px;
+            }
+        }
+        .pay-money{
+            flex 1
+            display flex
+            justify-content: flex-end;
+            .inner-text{
+                text-align: right
+                line-height 50px
+                margin-right 20px
+            }
+            .pay-order{
+                display: block;
+                width: 1rem;
+                height: 100%;
+                line-height: 0.5rem;
+                font-size: .16rem;
+                text-align: center;
+                color: white;
+                border: 0;
+                background-color: #fc9109;
+            }
+            .pay-order.active{
+                background-color red
             }
         }
     }

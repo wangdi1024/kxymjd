@@ -15,10 +15,15 @@
 <script>
 export default {
     name:'textBox',
+    props: ['value'],
+    model:{
+        prop:'value',
+        event:'sendMsg'
+    },
     data() {
         return {
             isKeyup:false,
-            inputText:'',
+            inputText:this.value,
         }
     },
     methods:{
@@ -34,7 +39,7 @@ export default {
                  
             }
         },
-        // 将要发生的内容传递给父组件
+        // 将要发的内容传递给父组件
         sendMsg(){
             this.$emit("sendMsg", this.inputText)
         }

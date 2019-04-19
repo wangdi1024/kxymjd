@@ -15,7 +15,7 @@
         </div>
         <div class="footer-box">
             <div class="sendMsg-box">
-                <textBox  @sendMsg='sendMsg'></textBox>
+                <textBox  @sendMsg='sendMsg' v-model="name"></textBox>
             </div>
         </div>
     </div>
@@ -28,6 +28,11 @@ export default {
     components:{
         navBar,
         textBox
+    },
+    data() {
+        return {
+            name:'nick'
+        }
     },
     methods:{
         sendMsg(data){
