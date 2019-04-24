@@ -1144,6 +1144,7 @@ li .com-storelist-item {
 .mod-hot-goods {
   background-color: #fff;
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 #hot-goods-list {
   background: #f2f2f2;

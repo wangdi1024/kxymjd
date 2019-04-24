@@ -25,7 +25,7 @@ export default {
             isKeyup:false,
             inputText:this.value,
         }
-    },
+    },                                                                                                                                                                                                                                                                                                               
     methods:{
         theInput(){
              var sendMsg=this.$refs.sendMsg

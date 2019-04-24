@@ -21,6 +21,9 @@ export default {
             this.inputNumber++
           
         },
+        test(){
+            console.log('测试一下');
+        },
         // 减数量
         sub(){
              this.inputNumber--
@@ -41,6 +44,7 @@ export default {
             //    console.log(this.inputNumber);
             var myinputnum=document.getElementById('myinputnum').value
             this.inputNumber=myinputnum
+            this.$emit('changeNum',this.inputNumber)
             }).catch(() => {
                 var myinputnum=document.getElementById('myinputnum')
                 myinputnum.value=this.inputNumber

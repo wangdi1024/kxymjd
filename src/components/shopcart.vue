@@ -44,7 +44,7 @@
                                    <div class="text-warning">
                                        <span style="color:#ff273b;font-size:0.15rem"><em style="font-size:0.1rem">￥</em>{{item.price}}<span style="font-size:0.1rem;color:#ff273b;">/包</span></span>
                                    </div>
-                                   <numBox></numBox>
+                                   <numBox @changeNum='changeNum' ref="numbox"></numBox>
                                </div>
                            </div>
                        </div>
@@ -92,6 +92,12 @@ export default {
            ],
         }
     },
+    created(){
+        this.$nextTick(()=>{
+            console.log(this.$children);
+            console.log(1);
+        })
+    },
     methods:{
         iseditor(e){
             this.collect =!this.collect
@@ -101,8 +107,14 @@ export default {
             }else{
                  e.target.innerText='编辑'
             }
-        }
-      
+        },
+        // 接受子组件传递过来的值
+        changeNum(data){
+            console.log(data);
+            // 可访问子组件的方法
+           this.$refs.numbox[0].test()
+        },
+        
     },
     computed:{
         allChecked:{
